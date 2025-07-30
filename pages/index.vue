@@ -112,7 +112,7 @@
 </template>
 
 <script setup>
-import foto from '~/assets/rayival.jpg'
+import foto from '~/assets/Rayival.jpg'
 import perpusImage from '~/assets/Perpus.png'
 import profilImage from '~/assets/profil.png'
 import agroImage from '~/assets/agro.png'
