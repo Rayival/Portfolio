@@ -1,16 +1,15 @@
 <template>
-  <div>
-    <!-- Hero -->
-    <section class="d-flex align-items-center justify-content-center text-center text-white"
-      style="height: 100vh; background: linear-gradient(#00000099, #00000099), url('https://source.unsplash.com/1600x900/?code') center/cover no-repeat;">
+  <div class="main-wrapper text-dark">
+    <!-- Hero Section -->
+    <section class="hero-section d-flex align-items-center justify-content-center text-center text-white">
       <div class="container">
-        <h1 class="display-4 fw-bold">Halo, Saya Rayival</h1>
-        <p class="lead">Junior Web Developer | Vue.js & Laravel Enthusiast</p>
+        <h1 class="display-4 fw-bold animate__animated animate__fadeInDown">Halo, Saya Rayival</h1>
+        <p class="lead animate__animated animate__fadeInUp">Junior Web Developer | Vue.js & Laravel Enthusiast</p>
       </div>
     </section>
 
     <!-- Tentang Saya -->
-    <section id="about" class="py-5 bg-light text-center text-md-start">
+    <section id="about" class="py-5 text-center text-md-start bg-glass">
       <div class="container">
         <div class="row align-items-center">
           <div class="col-md-4 text-center mb-4 mb-md-0">
@@ -22,11 +21,11 @@
             />
           </div>
           <div class="col-md-8">
-            <h2 class="mb-3">Tentang Saya</h2>
-            <p>
-              Saya adalah mahasiswa Teknik Informatika dari Universitas Perjuangan Tasikmalaya. Saya fokus dalam pengembangan web dengan Vue.js, Nuxt, Laravel, dan memiliki pengalaman sejak SMK dalam membuat proyek-proyek digital.
+            <h2 class="mb-3 fw-bold text-primary">Tentang Saya</h2>
+            <p class="text-muted">
+              Saya adalah mahasiswa Teknik Informatika dari Universitas Perjuangan Tasikmalaya. Saya fokus dalam
+              pengembangan web dengan Vue.js, Nuxt, Laravel, dan memiliki pengalaman sejak SMK dalam membuat proyek-proyek digital.
             </p>
-            <!-- Tombol Sosial Media -->
             <div class="mt-3">
               <a href="https://instagram.com/ryvlds_" class="btn btn-outline-dark me-2 mb-2" target="_blank">
                 <i class="bi bi-instagram"></i> Instagram
@@ -44,14 +43,14 @@
     </section>
 
     <!-- Timeline Pendidikan -->
-    <section class="py-5">
+    <section class="py-5 bg-white bg-glass">
       <div class="container">
-        <h2 class="text-center mb-4">Timeline Pendidikan</h2>
+        <h2 class="text-center mb-5 fw-bold text-primary">Timeline Pendidikan</h2>
         <ul class="timeline list-unstyled">
           <li v-for="edu in education" :key="edu.level" class="mb-4">
-            <div class="card shadow-sm">
+            <div class="card shadow-sm border-0 glass-card">
               <div class="card-body">
-                <h5 class="card-title">{{ edu.level }}</h5>
+                <h5 class="card-title fw-semibold">{{ edu.level }}</h5>
                 <p class="card-text mb-1">{{ edu.school }}</p>
                 <small class="text-muted">{{ edu.year }}</small>
               </div>
@@ -62,17 +61,17 @@
     </section>
 
     <!-- Proyek -->
-    <section id="projects" class="py-5 bg-light">
+    <section id="projects" class="py-5 bg-glass">
       <div class="container">
-        <h2 class="text-center mb-4">PROJECT</h2>
+        <h2 class="text-center mb-5 fw-bold text-primary">PROJECT</h2>
         <div class="row">
           <div class="col-sm-12 col-md-6 col-lg-4 mb-4" v-for="project in projects" :key="project.title">
-            <div class="card h-100 shadow-sm">
+            <div class="card h-100 shadow-sm border-0 glass-card">
               <img :src="project.image" class="card-img-top" alt="project" style="object-fit: cover; height: 200px;" />
               <div class="card-body d-flex flex-column">
-                <h5 class="card-title">{{ project.title }}</h5>
-                <p class="card-text flex-grow-1">{{ project.description }}</p>
-                <a :href="project.link" class="btn btn-primary mt-auto" target="_blank">Lihat</a>
+                <h5 class="card-title fw-semibold">{{ project.title }}</h5>
+                <p class="card-text flex-grow-1 text-muted">{{ project.description }}</p>
+                <a :href="project.link" class="btn btn-outline-primary mt-auto" target="_blank">Lihat</a>
               </div>
             </div>
           </div>
@@ -80,11 +79,11 @@
       </div>
     </section>
 
-    <!-- Showcase Buku Digital -->
-    <section class="py-5">
-      <div class="container text-center">
-        <h2 class="mb-4">BUKU DIGITAL</h2>
-        <p class="mx-auto" style="max-width: 700px;">
+    <!-- Buku Digital -->
+    <section id="book" class="py-5 text-center bg-glass">
+      <div class="container">
+        <h2 class="mb-4 fw-bold text-primary">BUKU DIGITAL</h2>
+        <p class="mx-auto text-muted" style="max-width: 700px;">
           <em>Love Lost and Surrendered</em> — Kisah cinta, penyesalan, pertumbuhan, dan rasa ingin kembali. Buku ini merangkum pengalaman pribadi saya dalam perjalanan emosional, dan bagaimana saya belajar untuk menerima, tumbuh, dan melepaskan.
         </p>
         <a href="#contact" class="btn btn-outline-primary mt-3">Ingin tahu lebih banyak? Kontak saya!</a>
@@ -92,9 +91,9 @@
     </section>
 
     <!-- Kontak -->
-    <section id="contact" class="py-5 bg-light">
+    <section id="contact" class="py-5 bg-glass">
       <div class="container">
-        <h2 class="text-center mb-4">Kontak</h2>
+        <h2 class="text-center mb-4 fw-bold text-primary">Kontak</h2>
         <form class="mx-auto" style="max-width: 500px">
           <div class="mb-3">
             <label class="form-label">Nama</label>
@@ -149,10 +148,37 @@ const education = [
 </script>
 
 <style scoped>
+.main-wrapper {
+  background: linear-gradient(to right top, #ffffff, #e6f0ff, #d4ecff, #c2e7ff);
+}
+
+/* Hero tetap gelap untuk kontras */
+.hero-section {
+  height: 100vh;
+  background: linear-gradient(#00000099, #00000099), url('https://source.unsplash.com/1600x900/?code') center/cover no-repeat;
+  padding: 4rem 0;
+}
+
+/* Timeline bullet */
 .timeline li::before {
   content: '•';
   color: #0d6efd;
   font-size: 24px;
   padding-right: 10px;
+}
+
+/* Glassmorphism */
+.bg-glass {
+  background-color: rgba(255, 255, 255, 0.6);
+  backdrop-filter: blur(10px);
+}
+
+.glass-card {
+  background-color: rgba(255, 255, 255, 0.75);
+  backdrop-filter: blur(12px);
+  transition: transform 0.3s ease;
+}
+.glass-card:hover {
+  transform: translateY(-4px);
 }
 </style>
