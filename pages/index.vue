@@ -135,7 +135,7 @@ const projects = [
     title: 'AgroKulit',
     description: 'Website Profil Agro Kulit (Team Work SalvatoreTech)',
     image: agroImage,
-    link: 'https://github.com/rayival/AgroKulit',
+    link: 'https://agro-kulit.vercel.app/',
   }
 ]
 
@@ -182,3 +182,4 @@ const education = [
   transform: translateY(-4px);
 }
 </style>
+
