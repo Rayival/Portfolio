@@ -3,7 +3,7 @@
     <!-- Foto Profil -->
     <div class="profile-img mb-4 mx-auto" data-aos="zoom-in" data-aos-delay="200">
       <img
-        src="@/assets/rayival.jpg"
+        src="@/assets/valdes.jpg"
         alt="Foto Rayival Dede Saputra"
         class="rounded-circle shadow"
         width="150"
@@ -94,3 +94,4 @@
   background-color: rgba(255, 255, 255, 0.4);
 }
 </style>
+
