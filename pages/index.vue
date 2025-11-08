@@ -111,7 +111,7 @@
 </template>
 
 <script setup>
-import foto from '~/assets/Rayival.jpg'
+import foto from '~/assets/ival1.jpg'
 import perpusImage from '~/assets/Perpus.png'
 import profilImage from '~/assets/profil.png'
 import agroImage from '~/assets/agro.png'
@@ -182,5 +182,6 @@ const education = [
   transform: translateY(-4px);
 }
 </style>
+
 
 
