@@ -80,7 +80,7 @@
     </section>
 
     <!-- Buku Digital -->
-    <section id="book" class="py-5 text-center bg-glass">
+    <!--<section id="book" class="py-5 text-center bg-glass">
       <div class="container">
         <h2 class="mb-4 fw-bold text-primary">BUKU DIGITAL</h2>
         <p class="mx-auto text-muted" style="max-width: 700px;">
@@ -182,4 +182,5 @@ const education = [
   transform: translateY(-4px);
 }
 </style>
+
 
