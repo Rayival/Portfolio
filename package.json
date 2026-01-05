@@ -10,17 +10,18 @@
     "postinstall": "nuxt prepare"
   },
   "dependencies": {
+    "@heroicons/vue": "^2.2.0",
+    "@iconify/vue": "^5.0.0",
     "@nuxtjs/color-mode": "^3.5.2",
     "@popperjs/core": "^2.11.8",
     "@vueuse/core": "^13.6.0",
     "aos": "^2.3.4",
-    "bootstrap": "^5.3.7",
-    "bootstrap-icons": "^1.13.1",
     "nuxt": "^3.15.0",
     "vue": "latest",
     "vue-router": "latest"
   },
   "devDependencies": {
+    "@nuxtjs/tailwindcss": "^6.14.0",
     "@types/aos": "^3.0.7"
   }
 }
