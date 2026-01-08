@@ -1,8 +1,14 @@
 <template>
-  <div class="min-h-screen bg-gradient-to-b from-slate-950 via-slate-900 to-slate-950 text-slate-100">
-    <Header />
+  <div class="main-wrapper">
+    <client-only>
+      <Header />
+    </client-only>
+
     <NuxtPage />
-    <Footer />
+
+    <client-only>
+      <Footer />
+    </client-only>
   </div>
 </template>
 
@@ -10,6 +16,7 @@
 import Header from '~/components/Header.vue'
 import Footer from '~/components/Footer.vue'
 
+// 🔑 GOOGLE SEARCH CONSOLE VERIFICATION (WAJIB)
 useHead({
   meta: [
     {
@@ -19,3 +26,9 @@ useHead({
   ]
 })
 </script>
+
+<style>
+.main-wrapper {
+  min-height: 100vh;
+}
+</style>
