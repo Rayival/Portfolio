@@ -1,0 +1,1 @@
+export { default } from "file:///C:/Users/Asus/Documents/Rayival/portofolio/Portfolio/node_modules/@nuxt/vite-builder/dist/runtime/client.manifest.mjs"
