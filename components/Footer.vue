@@ -1,51 +1,78 @@
 <template>
-  <footer
-    class="bg-gradient-to-b from-slate-900 to-slate-950
-           border-t border-white/5"
-  >
-    <div class="max-w-7xl mx-auto px-6 py-16 grid md:grid-cols-3 gap-10">
+  <footer class="bg-slate-950 border-t border-white/5">
+    <div class="max-w-7xl mx-auto px-6 py-14">
 
-      <!-- BRAND -->
-      <div>
-        <h3
-          class="text-xl font-bold
-                 bg-gradient-to-r from-indigo-400 to-cyan-400
-                 bg-clip-text text-transparent"
-        >
-          Rayival
-        </h3>
-        <p class="mt-3 text-sm text-slate-400 max-w-sm">
-          Tech enthusiast focused on building modern, scalable,
-          and clean digital experiences.
-        </p>
-      </div>
+      <!-- TOP -->
+      <div class="grid md:grid-cols-2 gap-10 items-start">
 
-      <!-- TECH -->
-      <div>
-        <h4 class="font-semibold mb-4">Tech Stack</h4>
-        <ul class="text-sm text-slate-400 space-y-2">
-          <li>Vue & Nuxt</li>
-          <li>Laravel</li>
-          <li>Tailwind CSS</li>
-          <li>Roblox Studio</li>
-        </ul>
-      </div>
+        <!-- BRAND -->
+        <div>
+          <h3 class="text-xl font-bold text-white mb-2">
+            Rayival
+          </h3>
 
-      <!-- SOCIAL -->
-      <div>
-        <h4 class="font-semibold mb-4">Connect</h4>
-        <div class="flex gap-4 text-slate-400">
-          <a href="https://github.com/Rayival" target="_blank" class="hover:text-white">GitHub</a>
-          <a href="https://instagram.com/ryvlds_" target="_blank" class="hover:text-white">Instagram</a>
-          <a href="https://tiktok.com/@ryvlzz" target="_blank" class="hover:text-white">TikTok</a>
+          <p class="text-sm text-slate-400 mb-4">
+            Tech Enthusiast · Junior Web Developer · Content Creator
+          </p>
+
+          <p class="text-sm text-slate-500 max-w-md">
+            Building modern, clean, and meaningful digital experiences through
+            web development, UI/UX, and creative tech.
+          </p>
+        </div>
+
+        <!-- LINKS -->
+        <div class="flex md:justify-end gap-10 text-sm">
+
+          <!-- NAV -->
+          <div>
+            <p class="text-slate-300 font-medium mb-3">Navigation</p>
+            <ul class="space-y-2 text-slate-400">
+              <li><a href="#projects" class="hover:text-indigo-400 transition">Projects</a></li>
+              <li><a href="#about" class="hover:text-indigo-400 transition">About</a></li>
+              <li><a href="#contact" class="hover:text-indigo-400 transition">Contact</a></li>
+            </ul>
+          </div>
+
+          <!-- SOCIAL -->
+          <div>
+            <p class="text-slate-300 font-medium mb-3">Connect</p>
+            <ul class="space-y-2 text-slate-400">
+              <li>
+                <a href="https://github.com/Rayival" target="_blank" class="hover:text-white transition">
+                  GitHub
+                </a>
+              </li>
+              <li>
+                <a href="https://instagram.com/ryvlds_" target="_blank" class="hover:text-white transition">
+                  Instagram
+                </a>
+              </li>
+              <li>
+                <a href="https://tiktok.com/@ryvlzz" target="_blank" class="hover:text-white transition">
+                  TikTok
+                </a>
+              </li>
+            </ul>
+          </div>
+
         </div>
       </div>
 
-    </div>
+      <!-- DIVIDER -->
+      <div class="h-px my-10 bg-gradient-to-r from-transparent via-white/10 to-transparent"></div>
 
-    <!-- COPYRIGHT -->
-    <div class="text-center text-sm text-slate-500 pb-8">
-      © {{ new Date().getFullYear() }} Rayival. Built with Nuxt & Tailwind.
+      <!-- BOTTOM -->
+      <div class="flex flex-col sm:flex-row justify-between items-center gap-4 text-xs text-slate-500">
+        <p>
+          © {{ new Date().getFullYear() }} Rayival. All rights reserved.
+        </p>
+
+        <p>
+          Built with Vue, Nuxt & Tailwind CSS
+        </p>
+      </div>
+
     </div>
   </footer>
 </template>
