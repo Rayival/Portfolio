@@ -61,8 +61,9 @@
   <div class="bg-gradient-to-b from-slate-950 via-slate-900 to-slate-950 text-slate-100">
 
     <!-- ================= HERO ================= -->
-    <section class="relative min-h-screen pt-28 sm:pt-32 flex items-center overflow-hidden">
-
+     
+    <section id="home" class="relative min-h-screen pt-28 sm:pt-32 flex items-center overflow-hidden">
+   
       <!-- GLOW -->
       <div class="absolute -top-32 -left-32 w-96 h-96 bg-indigo-600/30 blur-3xl rounded-full"></div>
       <div class="absolute top-20 right-0 w-72 h-72 bg-cyan-500/20 blur-3xl rounded-full"></div>
@@ -165,7 +166,7 @@
     <!-- ================= ABOUT ================= -->
    <section
   id="about"
-  class="relative pt-36 pb-32
+  class="scroll-mt-24 relative pt-36 pb-32
          bg-gradient-to-b from-white via-slate-50 to-white
          text-slate-900 overflow-hidden"
 >
@@ -285,7 +286,7 @@
 </div>
 
     <!-- ================= PROJECTS ================= -->
-    <section id="projects" class="py-32 bg-slate-950">
+    <section id="projects" class="scroll-mt-24 py-32 bg-slate-950">
       <div class="max-w-7xl mx-auto px-6">
         <h2 class="text-3xl font-bold text-center mb-20">Selected Projects</h2>
 
@@ -348,7 +349,7 @@
   <!-- ================= CERTIFICATIONS ================= -->
   <section
   id="certifications"
-  class="relative py-36 bg-gradient-to-b from-white to-slate-50
+  class="scroll-mt-24 relative py-36 bg-gradient-to-b from-white to-slate-50
          text-slate-900 overflow-hidden">
 
   <!-- (1) GLOW SPOTLIGHT -->
@@ -478,7 +479,7 @@
     <!-- ================= CONTACT ================= -->
     <section
       id="contact"
-      class="relative py-36 bg-gradient-to-b from-slate-900 to-slate-950 text-center"
+      class="scroll-mt-24 relative py-36 bg-gradient-to-b from-slate-900 to-slate-950 text-center"
     >
       <div class="max-w-3xl mx-auto px-6 fade-up">
         <h2 class="text-4xl font-bold mb-4">

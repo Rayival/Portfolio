@@ -1,11 +1,17 @@
 <template>
   <header
-    class="fixed top-0 inset-x-0 z-50 backdrop-blur-md bg-slate-950/70 border-b border-white/5"
+    class="fixed top-0 inset-x-0 z-50
+           backdrop-blur-md bg-slate-950/70
+           border-b border-white/5"
   >
     <div class="max-w-7xl mx-auto px-6 h-16 flex items-center justify-between">
 
       <!-- BRAND -->
-      <a href="#home" class="font-bold text-lg text-white tracking-wide">
+      <a
+        href="#home"
+        class="font-bold text-lg tracking-wide
+               text-white hover:text-indigo-400 transition"
+      >
         Rayival
       </a>
 
@@ -15,19 +21,21 @@
           v-for="item in navItems"
           :key="item.href"
           :href="item.href"
-          class="text-slate-300 hover:text-indigo-400 transition relative group"
+          class="relative text-slate-300 hover:text-indigo-400 transition group"
         >
           {{ item.label }}
           <span
-            class="absolute -bottom-1 left-0 w-0 h-px bg-indigo-400 transition-all group-hover:w-full"
-          ></span>
+            class="absolute -bottom-1 left-0 h-px w-0
+                   bg-indigo-400 transition-all duration-300
+                   group-hover:w-full"
+          />
         </a>
       </nav>
 
       <!-- MOBILE BUTTON -->
       <button
         @click="open = !open"
-        class="md:hidden text-slate-300 focus:outline-none"
+        class="md:hidden text-slate-300 hover:text-white transition"
         aria-label="Toggle Menu"
       >
         <svg
@@ -87,6 +95,7 @@ const navItems = [
   { label: 'Home', href: '#home' },
   { label: 'About', href: '#about' },
   { label: 'Projects', href: '#projects' },
+  { label: 'Certifications', href: '#certifications' },
   { label: 'Contact', href: '#contact' },
 ]
 </script>
