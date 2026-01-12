@@ -1360,7 +1360,7 @@ const _yuvUG1HP35ojcxKeZbUBPZMcyjpwpqFeOl0tBKjHy2I = (function(nitro) {
 
 const rootDir = "C:/Users/Asus/Documents/Rayival/portofolio/Portfolio";
 
-const appHead = {"meta":[{"charset":"utf-8"},{"name":"description","content":"Portfolio of Rayival – Tech enthusiast focused on modern web development using Vue, Nuxt, Laravel, and Tailwind."},{"name":"viewport","content":"width=device-width, initial-scale=1"},{"name":"theme-color","content":"#6366F1"}],"link":[{"rel":"stylesheet","href":"https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap"}],"style":[],"script":[],"noscript":[],"title":"Rayival | Tech Enthusiast & Web Developer"};
+const appHead = {"meta":[{"charset":"utf-8"},{"name":"description","content":"Portfolio of Rayival – Tech enthusiast focused on modern web development using Vue, Nuxt, and Tailwind."},{"name":"viewport","content":"width=device-width, initial-scale=1"},{"name":"theme-color","content":"#6366F1"}],"link":[{"rel":"stylesheet","href":"https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap"}],"style":[],"script":[],"noscript":[],"title":"Rayival Dede Saputra | Tech Enthusiast & Web Developer"};
 
 const appRootTag = "div";
 

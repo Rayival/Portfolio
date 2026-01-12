@@ -45,12 +45,12 @@ export default defineNuxtConfig({
    * ========================= */
   app: {
     head: {
-      title: 'Rayival | Tech Enthusiast & Web Developer',
+      title: 'Rayival Dede Saputra | Tech Enthusiast & Web Developer',
       meta: [
         {
           name: 'description',
           content:
-            'Portfolio of Rayival – Tech enthusiast focused on modern web development using Vue, Nuxt, Laravel, and Tailwind.',
+            'Portfolio of Rayival – Tech enthusiast focused on modern web development using Vue, Nuxt, and Tailwind.',
         },
         { name: 'viewport', content: 'width=device-width, initial-scale=1' },
         { name: 'theme-color', content: '#6366F1' },

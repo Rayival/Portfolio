@@ -1,4 +1,63 @@
 <template>
+  <!-- CERTIFICATE MODAL -->
+<div
+  v-if="activeCert"
+  class="fixed inset-0 z-50 flex items-center justify-center bg-black/70 backdrop-blur-sm"
+>
+  <div
+    class="bg-white max-w-3xl w-full mx-4 rounded-2xl shadow-2xl overflow-hidden"
+  >
+    <!-- Header -->
+    <div class="flex items-center justify-between p-5 border-b">
+      <div class="flex items-center gap-3">
+        <h3 class="font-semibold text-lg text-slate-900">
+          {{ activeCert.title }}
+        </h3>
+        <span
+          class="inline-flex items-center gap-1 px-2 py-0.5 text-xs
+                 rounded-full bg-green-100 text-green-700 font-medium"
+        >
+          ✔ Verified
+        </span>
+      </div>
+
+      <button
+        @click="closeCert"
+        class="text-slate-500 hover:text-slate-700"
+      >
+        ✕
+      </button>
+    </div>
+
+    <!-- Content -->
+    <div class="p-6">
+      <img
+        :src="activeCert.image"
+        alt="Certificate Preview"
+        class="w-full rounded-lg border mb-6"
+      />
+
+      <div class="flex justify-between items-center">
+        <p class="text-sm text-slate-500">
+          {{ activeCert.issuer }} · {{ activeCert.year }}
+        </p>
+
+        <a
+          :href="activeCert.link"
+          target="_blank"
+          rel="noopener"
+          class="inline-flex items-center gap-2 px-4 py-2
+                 rounded-lg bg-indigo-600 text-white
+                 hover:bg-indigo-500 transition"
+        >
+          Open Original
+          <ArrowTopRightOnSquareIcon class="w-4 h-4" />
+        </a>
+      </div>
+    </div>
+  </div>
+</div>
+
   <div class="bg-gradient-to-b from-slate-950 via-slate-900 to-slate-950 text-slate-100">
 
     <!-- ================= HERO ================= -->
@@ -88,19 +147,76 @@
     </section>
 
     <!-- HERO → ABOUT DIVIDER -->
-    <div class="h-32 bg-gradient-to-b from-slate-900 to-white"></div>
+<div class="relative overflow-hidden bg-slate-950">
+  <svg
+    viewBox="0 0 1440 100"
+    class="block w-full h-[64px] rotate-180 opacity-95"
+    preserveAspectRatio="none"
+  >
+    <path
+      fill="#ffffff"
+      d="M0,32L60,37.3C120,43,240,53,360,48C480,43,600,21,720,16C840,11,960,21,1080,32C1200,43,1320,53,1380,58.7L1440,64L1440,0L0,0Z"
+    />
+  </svg>
+</div>
+
+
 
     <!-- ================= ABOUT ================= -->
-    <section id="about" class="pt-36 pb-32 bg-white text-slate-900">
-      <div class="max-w-6xl mx-auto px-6">
+   <section
+  id="about"
+  class="relative pt-36 pb-32
+         bg-gradient-to-b from-white via-slate-50 to-white
+         text-slate-900 overflow-hidden"
+>
+
+  <!-- GLOW BACKGROUND (TARUH PALING ATAS) -->
+  <div class="absolute -top-40 -left-40 w-[500px] h-[500px]
+              bg-indigo-400/20 rounded-full blur-3xl"></div>
+
+  <div class="absolute top-1/2 -right-40 w-[400px] h-[400px]
+              bg-cyan-400/20 rounded-full blur-3xl"></div>
+
+  <!-- TEXTURE / DOT PATTERN -->
+  <div
+    class="absolute inset-0 opacity-[0.02]
+           bg-[radial-gradient(circle_at_1px_1px,_#000_1px,_transparent_0)]
+           bg-[length:28px_28px]"
+  ></div>
+
+  <!-- CONTAINER YANG HILANG -->
+  <div class="relative max-w-6xl mx-auto px-6">
+
+
         <h2 class="text-3xl font-bold mb-6 flex items-center gap-3">
           <AcademicCapIcon class="w-8 h-8 text-indigo-600" />
           About Me
         </h2>
 
-        <p class="text-slate-600 max-w-3xl mb-14">
-          Informatics Engineering student with a strong interest in Web Development, Roblox Development, Content Creation, and emerging technologies as a Tech Enthusiast.
+        <p class="text-slate-600 max-w-3xl mb-10">
+          <svg
+          class="mb-14"
+          width="120"
+          height="8"
+          viewBox="0 0 120 8"
+          fill="none"
+        >
+          <rect width="120" height="8" rx="4" fill="url(#aboutGrad)" />
+          <defs>
+            <linearGradient id="aboutGrad" x1="0" y1="0" x2="120" y2="0">
+              <stop stop-color="#6366F1" />
+              <stop offset="1" stop-color="#22D3EE" />
+            </linearGradient>
+          </defs>
+          </svg>
+          Informatics Engineering student with a strong interest in
+          <span class="font-semibold text-indigo-600">Web Development</span>,
+          <span class="font-semibold text-cyan-600">Roblox Development</span>,
+          <span class="font-semibold text-indigo-600">Content Creation</span>,
+          and emerging technologies as a
+          <span class="font-semibold">Tech Enthusiast</span>.
         </p>
+
 
         <div class="flex flex-wrap gap-3 mb-20">
           <span
@@ -111,6 +227,35 @@
             {{ tech }}
           </span>
         </div>
+
+        <div class="grid sm:grid-cols-3 gap-6 mb-24">
+  <div class="p-6 rounded-2xl bg-indigo-50 border border-indigo-100">
+    <h4 class="font-semibold mb-2 text-indigo-700">Web Developer</h4>
+    <p class="text-sm text-slate-600">
+      Building clean, responsive, and scalable web applications.
+    </p>
+  </div>
+
+  <div class="p-6 rounded-2xl bg-cyan-50 border border-cyan-100">
+    <h4 class="font-semibold mb-2 text-cyan-700">Roblox Developer</h4>
+    <p class="text-sm text-slate-600">
+      Gameplay logic, systems, and creative virtual experiences.
+    </p>
+  </div>
+
+  <div class="p-6 rounded-2xl bg-indigo-50 border border-indigo-100">
+    <h4 class="font-semibold mb-2 text-indigo-700">Content Creator</h4>
+    <p class="text-sm text-slate-600">
+      Sharing tech knowledge and development journey.
+    </p>
+    </div>
+  </div>
+
+  <div class="flex items-center gap-2 mb-6 text-sm font-semibold text-indigo-600">
+  <span class="w-2 h-2 rounded-full bg-indigo-600"></span>
+  Education Journey
+</div>
+
 
         <div class="space-y-6 border-l-2 border-indigo-500 pl-6">
           <div v-for="edu in education" :key="edu.level" class="relative flex gap-4">
@@ -125,8 +270,19 @@
       </div>
     </section>
 
-    <!-- DIVIDER -->
-    <div class="h-px bg-gradient-to-r from-transparent via-indigo-500/20 to-transparent"></div>
+<!-- ABOUT → PROJECTS DIVIDER -->
+<div class="relative overflow-hidden bg-white">
+  <svg
+    viewBox="0 0 1440 100"
+    class="block w-full h-[80px]"
+    preserveAspectRatio="none"
+  >
+    <path
+      fill="#020617"
+      d="M0,20 C240,60 480,100 720,80 960,60 1200,20 1440,40 L1440,100 L0,100 Z"
+    />
+  </svg>
+</div>
 
     <!-- ================= PROJECTS ================= -->
     <section id="projects" class="py-32 bg-slate-950">
@@ -174,6 +330,151 @@
       </div>
     </section>
 
+    <!-- PROJECTS → CERTIFICATIONS DIVIDER -->
+<div class="relative overflow-hidden bg-slate-950">
+  <svg
+    viewBox="0 0 1440 100"
+    class="block w-full h-[80px] rotate-180"
+    preserveAspectRatio="none"
+  >
+    <path
+      fill="#ffffff"
+      d="M0,32 C240,64 480,0 720,16 960,32 1200,64 1440,32 L1440,0 L0,0 Z"
+    />
+  </svg>
+</div>
+
+
+  <!-- ================= CERTIFICATIONS ================= -->
+  <section
+  id="certifications"
+  class="relative py-36 bg-gradient-to-b from-white to-slate-50
+         text-slate-900 overflow-hidden">
+
+  <!-- (1) GLOW SPOTLIGHT -->
+  <div class="absolute inset-0">
+    <div class="absolute top-1/3 left-1/2 -translate-x-1/2
+                w-[600px] h-[600px]
+                bg-indigo-500/15 blur-3xl rounded-full">
+    </div>
+  </div>
+
+    <div class="relative max-w-6xl mx-auto px-6">
+      <h2 class="text-3xl font-bold text-center mb-4">
+         Professional Certifications
+      </h2>
+      <p class="text-center text-slate-500 mb-20 max-w-xl mx-auto">
+        Industry-recognized certifications validating my technical competence and professional readiness
+      </p>  
+
+      <div class="grid md:grid-cols-2 gap-10">
+        <div
+          v-for="cert in certifications"
+          :key="cert.title"
+          :class="[
+            'group rounded-2xl p-6 border transition-all duration-300 hover:-translate-y-1 hover:shadow-xl',
+          cert.type === 'National Certification'
+            ? 'bg-gradient-to-br from-white to-indigo-50 border-indigo-200'
+            : 'bg-white border-slate-200'
+        ]"
+      >
+
+          <!-- badge -->
+          <span
+          class="inline-flex items-center gap-2 mb-4 px-3 py-1 text-xs rounded-full
+          bg-indigo-500/10 text-indigo-600 font-medium
+          shadow-[0_0_12px_rgba(99,102,241,0.35)]">
+            <AcademicCapIcon class="w-4 h-4" />
+            {{ cert.type }}
+          </span>
+
+
+          <img
+            :src="cert.image"
+            alt="Certificate"
+            class="w-full h-40 object-contain mb-6"
+          />
+
+          <h3 class="font-semibold text-lg mb-1">
+            {{ cert.title }}
+          </h3>
+
+          <p class="text-sm text-slate-500 mb-3">
+            {{ cert.issuer }} · {{ cert.year }}
+          </p>
+
+          <p class="text-sm text-slate-600 mb-6">
+            {{ cert.description }}
+          </p>
+
+          <button
+            @click="openCert(cert)"
+            class="inline-flex items-center gap-2
+                  text-indigo-600 hover:text-indigo-500 font-medium"
+          >
+            View Credential
+            <ArrowTopRightOnSquareIcon class="w-4 h-4" />
+          </button>
+
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="py-24 bg-slate-950 text-slate-100">
+  <div class="max-w-5xl mx-auto px-6 text-center">
+    <h3 class="text-2xl font-bold mb-6">
+      What These Certifications Mean
+    </h3>
+    <p class="text-slate-400 max-w-3xl mx-auto mb-12">
+      Beyond certificates, these experiences strengthened my problem-solving mindset,
+      industry understanding, and readiness to work in real-world development environments.
+    </p>
+
+    <div class="grid sm:grid-cols-3 gap-6">
+      <div class="p-6 rounded-2xl bg-slate-900 border border-slate-800">
+        <h4 class="font-semibold mb-2">Technical Foundation</h4>
+        <p class="text-sm text-slate-400">
+          Strong fundamentals in programming, software development, and AI concepts.
+        </p>
+      </div>
+
+      <div class="p-6 rounded-2xl bg-slate-900 border border-slate-800">
+        <h4 class="font-semibold mb-2">Industry Standards</h4>
+        <p class="text-sm text-slate-400">
+          Certified against national competency standards (BNSP).
+        </p>
+      </div>
+
+      <div class="p-6 rounded-2xl bg-slate-900 border border-slate-800">
+        <h4 class="font-semibold mb-2">Professional Readiness</h4>
+        <p class="text-sm text-slate-400">
+          Ready to collaborate, learn fast, and adapt in professional teams.
+        </p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CERTIFICATIONS → CONTACT -->
+<div class="relative bg-slate-950">
+  <div class="absolute inset-x-0 top-0 h-px
+            bg-gradient-to-r
+            from-transparent via-indigo-500/30 to-transparent">
+</div>
+  <svg
+    viewBox="0 0 1440 120"
+    class="block w-full h-[96px]"
+    preserveAspectRatio="none"
+  >
+    <path
+      fill="#020617"
+      d="M0,40L80,48C160,56,320,72,480,69.3C640,67,800,45,960,37.3C1120,29,1280,35,1360,38.7L1440,42L1440,0L0,0Z"
+    />
+  </svg>
+</div>
+
+
     <!-- ================= CONTACT ================= -->
     <section
       id="contact"
@@ -210,6 +511,7 @@
   </div>
 </template>
 
+
 <script setup>
 import { ref, onMounted } from 'vue'
 import { AcademicCapIcon, ArrowTopRightOnSquareIcon } from '@heroicons/vue/24/outline'
@@ -224,10 +526,13 @@ import sdnLogo from '~/assets/schools/sdn.png'
 import smpnLogo from '~/assets/schools/smpn.png'
 import smkn4Logo from '~/assets/schools/smkn4.png'
 import unperLogo from '~/assets/schools/unper.png'
+import dicodingCert from '~/assets/certificates/dicoding-ai.png'
+import bnspCert from '~/assets/certificates/bnsp-webdev.png'
 
 const projectsCount = ref(0)
 const yearsLearning = ref(0)
 const teamProjects = ref(0)
+const activeCert = ref(null)
 
 const statsRef = ref(null)
 let hasAnimated = false
@@ -243,6 +548,48 @@ function animateCounter(refValue, target, duration = 1200) {
 
   requestAnimationFrame(update)
 }
+
+useHead({
+  title: 'Rayival Dede Saputra | Junior Web Developer | Tech Enthusiast | Content Creator',
+  meta: [
+    {
+      name: 'description',
+      content:
+        'Rayival Dede Saputra is a Junior Web Developer and Tech Enthusiast specializing in Vue, Nuxt, Laravel, and creative development including Roblox. Open for collaboration and professional opportunities.',
+    },
+
+    // Open Graph
+    { property: 'og:title', content: 'Rayival Dede Saputra | Junior Web Developer' },
+    {
+      property: 'og:description',
+      content:
+        'Portfolio of Rayival Dede Saputra — Web Developer, Tech Enthusiast, and Content Creator.',
+    },
+    { property: 'og:type', content: 'website' },
+    { property: 'og:url', content: 'https://your-portfolio-url.vercel.app' },
+    {
+      property: 'og:image',
+      content: 'https://your-portfolio-url.vercel.app/og-image.png',
+    },
+
+    // Twitter
+    { name: 'twitter:card', content: 'summary_large_image' },
+    {
+      name: 'twitter:title',
+      content: 'Rayival Dede Saputra | Junior Web Developer',
+    },
+    {
+      name: 'twitter:description',
+      content:
+        'Junior Web Developer & Tech Enthusiast building modern digital experiences.',
+    },
+    {
+      name: 'twitter:image',
+      content: 'https://your-portfolio-url.vercel.app/og-image.png',
+    },
+  ],
+})
+
 
 onMounted(() => {
   const fadeObserver = new IntersectionObserver(
@@ -276,6 +623,29 @@ const education = [
   { level: 'University', school: 'Universitas Perjuangan Tasikmalaya', year: '2025–Now', logo: unperLogo },
 ]
 
+const certifications = [
+  {
+    title: 'Belajar Dasar AI',
+    issuer: 'Dicoding Indonesia',
+    year: '2025',
+    type: 'Online Certification',
+    description:
+      'Fundamental understanding of Artificial Intelligence concepts, use cases, and basic implementation.',
+    image: dicodingCert,
+    link: 'https://www.dicoding.com/certificates/N9ZO2OK1RPG5',
+  },
+  {
+    title: 'Junior Web Developer',
+    issuer: 'BNSP – LSP Media Informatika',
+    year: '2025',
+    type: 'National Certification',
+    description:
+      'National professional certification validating competence in Programming and Software Development.',
+    image: bnspCert,
+    link: 'https://drive.google.com/file/d/1CdI4l_mwP1xUq4DijvA5pKhK-q44rEEO/view',
+  },
+]
+
 const projects = [
   {
     title: 'FIKS Fishing',
@@ -307,6 +677,15 @@ const projects = [
     stack: ['Vue', 'Teamwork'],
   },
 ]
+
+function openCert(cert) {
+  activeCert.value = cert
+}
+
+function closeCert() {
+  activeCert.value = null
+}
+
 </script>
 
 <style>
