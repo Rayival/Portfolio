@@ -523,6 +523,7 @@ import perpusImage from '~/assets/Perpus.png'
 import profilImage from '~/assets/profil.png'
 import agroImage from '~/assets/agro.png'
 import robloxImage from '~/assets/roblox.png'
+import valdexImage from '~/assets/valdex.png'
 import sdnLogo from '~/assets/schools/sdn.png'
 import smpnLogo from '~/assets/schools/smpn.png'
 import smkn4Logo from '~/assets/schools/smkn4.png'
@@ -655,6 +656,13 @@ const projects = [
     link: 'https://www.roblox.com/games/139533647854536/FIKS-Fishing',
     stack: ['Roblox Studio', 'Game Design'],
     type: 'roblox',
+  },
+   {
+    title: 'VΛLDEX',
+    description: 'A modern digital photo booth system designed for real-time capture, smart composition, and instant export',
+    image: valdexImage,
+    link: 'https://valdx.vercel.app/',
+    stack: ['Vue', 'Tailwind', 'Vercel'],
   },
   {
     title: 'Perpus Digital',
