@@ -82,6 +82,7 @@
             <Icon icon="logos:vue" />
             <Icon icon="logos:nuxt-icon" />
             <Icon icon="logos:javascript" />
+            <Icon icon="logos:react" />
             <Icon icon="logos:laravel" />
             <Icon icon="logos:tailwindcss-icon" />
             <Icon icon="logos:git-icon" />
@@ -166,7 +167,7 @@
     <!-- ================= ABOUT ================= -->
    <section
   id="about"
-  class="scroll-mt-24 relative pt-36 pb-32
+  class="fade-up scroll-mt-24 relative pt-36 pb-32
          bg-gradient-to-b from-white via-slate-50 to-white
          text-slate-900 overflow-hidden"
 >
@@ -271,6 +272,7 @@
       </div>
     </section>
 
+
 <!-- ABOUT → PROJECTS DIVIDER -->
 <div class="relative overflow-hidden bg-white">
   <svg
@@ -285,8 +287,50 @@
   </svg>
 </div>
 
+      <!-- ================= TECH STACK ORBIT PREMIUM ================= -->
+    <section class="py-36 bg-slate-950 text-center overflow-hidden">
+
+      <h2 class="text-3xl font-bold mb-20">
+        Tech Stack
+      </h2>
+
+      <div class="orbit-container mx-auto">
+
+        <!-- CENTER -->
+        <div class="orbit-center flex flex-col text-center">
+          <Icon icon="mdi:code-tags" class="text-5xl text-indigo-400" />
+          <!-- <span class="text-[10px] mt-1 text-slate-400">Junior Web Dev</span> -->
+        </div>
+
+        <!-- ORBIT 1 (Frontend) -->
+        <div class="orbit orbit-1">
+          <Icon icon="logos:vue" />
+          <Icon icon="logos:react" />
+          <Icon icon="logos:javascript" />
+          <Icon icon="logos:bootstrap" />
+          <Icon icon="logos:tailwindcss-icon" />
+        </div>
+
+        <!-- ORBIT 2 (Backend) -->
+        <div class="orbit orbit-2">
+          <Icon icon="logos:nodejs-icon" />
+          <Icon icon="logos:laravel" />
+          <Icon icon="logos:nuxt-icon" />
+        </div>
+
+        <!-- ORBIT 3 (Tools) -->
+        <div class="orbit orbit-3">
+          <Icon icon="logos:git-icon" />
+          <Icon icon="logos:figma" />
+          <Icon icon="simple-icons:roblox" class="text-white" />
+        </div>
+
+      </div>
+
+    </section>
+
     <!-- ================= PROJECTS ================= -->
-    <section id="projects" class="scroll-mt-24 py-32 bg-slate-950">
+    <section id="projects" class="fade-up scroll-mt-24 py-32 bg-slate-950">
       <div class="max-w-7xl mx-auto px-6">
         <h2 class="text-3xl font-bold text-center mb-20">Selected Projects</h2>
 
@@ -298,7 +342,10 @@
                    hover:scale-[1.02] hover:ring-1 hover:ring-indigo-500/30
                    hover:shadow-[0_0_40px_rgba(99,102,241,0.15)]"
           >
-            <img :src="project.image" class="h-48 w-full object-cover" />
+            <img
+              :src="project.image"
+              class="h-48 w-full object-cover transition duration-500 group-hover:scale-110"
+            />
 
             <div class="p-6">
               <span
@@ -349,7 +396,7 @@
   <!-- ================= CERTIFICATIONS ================= -->
   <section
   id="certifications"
-  class="scroll-mt-24 relative py-36 bg-gradient-to-b from-white to-slate-50
+  class="fade-up scroll-mt-24 relative py-36 bg-gradient-to-b from-white to-slate-50
          text-slate-900 overflow-hidden">
 
   <!-- (1) GLOW SPOTLIGHT -->
@@ -476,38 +523,154 @@
 </div>
 
 
-    <!-- ================= CONTACT ================= -->
-    <section
-      id="contact"
-      class="scroll-mt-24 relative py-36 bg-gradient-to-b from-slate-900 to-slate-950 text-center"
-    >
-      <div class="max-w-3xl mx-auto px-6 fade-up">
-        <h2 class="text-4xl font-bold mb-4">
-          Let’s build something together
-        </h2>
+  <!-- ================= CONTACT ================= -->
+<section
+  id="contact"
+  class="fade-up scroll-mt-24 relative py-36 bg-gradient-to-b from-slate-900 to-slate-950"
+>
+  <div class="max-w-6xl mx-auto px-6 text-center">
 
-        <p class="text-slate-400 mb-12">
-          Open for collaboration, freelance, or tech content projects.
-        </p>
+    <!-- TITLE -->
+    <h2 class="text-4xl font-bold mb-4">
+      Let’s Build Something Together
+    </h2>
 
-        <div class="flex justify-center gap-4 flex-wrap">
-          <a
-            href="mailto:your@email.com"
-            class="px-8 py-3 rounded-xl bg-indigo-600 hover:bg-indigo-500 transition font-semibold"
-          >
-            Email Me
-          </a>
+    <p class="text-slate-400 mb-16">
+      Open for collaboration, freelance work, tech projects, and content creation.
+    </p>
 
-          <a
-            href="https://github.com/Rayival"
-            target="_blank"
-            class="px-8 py-3 rounded-xl border border-slate-600 hover:border-indigo-500 transition"
-          >
-            GitHub
-          </a>
+    <!-- CONTACT GRID -->
+    <div class="grid grid-cols-2 md:grid-cols-3 gap-6">
+
+      <!-- EMAIL -->
+      <a
+        href="mailto:dederayival19@gmail.com"
+        class="group p-6 rounded-2xl bg-slate-900 border border-slate-800 hover:border-indigo-500 transition"
+      >
+        <div class="flex flex-col items-center gap-3">
+
+          <div class="text-3xl text-indigo-400 group-hover:scale-110 transition">
+            <Icon icon="mdi:email-outline"/>
+          </div>
+
+          <h3 class="font-semibold">Email</h3>
+
+          <p class="text-sm text-slate-400">
+            Send a message
+          </p>
+
         </div>
-      </div>
-    </section>
+      </a>
+
+      <!-- GITHUB -->
+      <a
+        href="https://github.com/Rayival"
+        target="_blank"
+        class="group p-6 rounded-2xl bg-slate-900 border border-slate-800 hover:border-indigo-500 transition"
+      >
+        <div class="flex flex-col items-center gap-3">
+
+          <div class="text-3xl text-white group-hover:scale-110 transition">
+            <Icon icon="mdi:github"/>
+          </div>
+
+          <h3 class="font-semibold">GitHub</h3>
+
+          <p class="text-sm text-slate-400">
+            View my repositories
+          </p>
+
+        </div>
+      </a>
+
+      <!-- LINKEDIN -->
+      <a
+        href="https://www.linkedin.com/in/rayival-dede-saputra-3a06892b3/"
+        target="_blank"
+        class="group p-6 rounded-2xl bg-slate-900 border border-slate-800 hover:border-indigo-500 transition"
+      >
+        <div class="flex flex-col items-center gap-3">
+
+          <div class="text-3xl text-blue-400 group-hover:scale-110 transition">
+            <Icon icon="mdi:linkedin"/>
+          </div>
+
+          <h3 class="font-semibold">LinkedIn</h3>
+
+          <p class="text-sm text-slate-400">
+            Professional profile
+          </p>
+
+        </div>
+      </a>
+
+      <!-- INSTAGRAM -->
+      <a
+        href="https://instagram.com/ryvlds_"
+        target="_blank"
+        class="group p-6 rounded-2xl bg-slate-900 border border-slate-800 hover:border-indigo-500 transition"
+      >
+        <div class="flex flex-col items-center gap-3">
+
+          <div class="text-3xl text-pink-500 group-hover:scale-110 transition">
+            <Icon icon="mdi:instagram"/>
+          </div>
+
+          <h3 class="font-semibold">Instagram</h3>
+
+          <p class="text-sm text-slate-400">
+            @ryvlds_
+          </p>
+
+        </div>
+      </a>
+
+      <!-- TIKTOK -->
+      <a
+        href="https://tiktok.com/@ryvlzz"
+        target="_blank"
+        class="group p-6 rounded-2xl bg-slate-900 border border-slate-800 hover:border-indigo-500 transition"
+      >
+        <div class="flex flex-col items-center gap-3">
+
+          <div class="text-3xl text-white group-hover:scale-110 transition">
+            <Icon icon="ic:baseline-tiktok"/>
+          </div>
+
+          <h3 class="font-semibold">TikTok</h3>
+
+          <p class="text-sm text-slate-400">
+            @ryvlzz
+          </p>
+
+        </div>
+      </a>
+
+      <!-- YOUTUBE -->
+      <a
+        href="https://www.youtube.com/@rayivaldedesaputra"
+        target="_blank"
+        class="group p-6 rounded-2xl bg-slate-900 border border-slate-800 hover:border-red-500 transition"
+      >
+        <div class="flex flex-col items-center gap-3">
+
+          <div class="text-3xl text-red-500 group-hover:scale-110 transition">
+            <Icon icon="mdi:youtube"/>
+          </div>
+
+          <h3 class="font-semibold">YouTube</h3>
+
+          <p class="text-sm text-slate-400">
+            Tech & personal content
+          </p>
+
+        </div>
+      </a>
+
+    </div>
+
+  </div>
+</section>
 
   </div>
 </template>
@@ -515,6 +678,7 @@
 
 <script setup>
 import { ref, onMounted } from 'vue'
+import Lenis from '@studio-freight/lenis'
 import { AcademicCapIcon, ArrowTopRightOnSquareIcon } from '@heroicons/vue/24/outline'
 import { Icon } from '@iconify/vue'
 
@@ -594,6 +758,37 @@ useHead({
 
 
 onMounted(() => {
+  
+  const lenis = new Lenis({
+    duration: 1.1,
+    smoothWheel: true,
+    smoothTouch: false
+  })
+
+  function raf(time) {
+    lenis.raf(time)
+    requestAnimationFrame(raf)
+  }
+
+  requestAnimationFrame(raf)
+
+  const observer = new IntersectionObserver(
+  (entries) => {
+    entries.forEach((entry) => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('show')
+      }
+    })
+  },
+  { threshold: 0.15 }
+)
+
+document.querySelectorAll('.fade-up').forEach((el) => {
+  observer.observe(el)
+})
+
+  requestAnimationFrame(raf)
+
   const fadeObserver = new IntersectionObserver(
     entries => entries.forEach(e => e.isIntersecting && e.target.classList.add('show')),
     { threshold: 0.2 }
@@ -650,10 +845,10 @@ const certifications = [
 
 const projects = [
   {
-    title: 'FIKS Fishing',
-    description: 'Fishing game on Roblox with gameplay logic and environment design.',
+    title: 'V4TAS',
+    description: 'Simulation of SMKN 4 Tasikmalaya.',
     image: robloxImage,
-    link: 'https://www.roblox.com/games/139533647854536/FIKS-Fishing',
+    link: 'https://www.roblox.com/games/139533647854536/V4TAS',
     stack: ['Roblox Studio', 'Game Design'],
     type: 'roblox',
   },
@@ -669,14 +864,14 @@ const projects = [
     description: 'Vue-based digital library application.',
     image: perpusImage,
     link: 'https://perpus-digital-valzzz.vercel.app/',
-    stack: ['Vue', 'Tailwind'],
+    stack: ['Vue', 'Bootstrap'],
   },
   {
     title: 'SMKN 4 Tasikmalaya Profile',
     description: 'School profile website.',
     image: profilImage,
     link: 'https://ukk-2025-ival.vercel.app/',
-    stack: ['Vue'],
+    stack: ['Vue', 'Bootstrap'],
   },
   {
     title: 'AgroKulit',
@@ -700,12 +895,117 @@ function closeCert() {
 <style>
 .fade-up {
   opacity: 0;
-  transform: translateY(24px);
-  transition: all 0.8s ease;
+  transform: translateY(40px);
+  transition: all 0.9s ease;
 }
 
 .fade-up.show {
   opacity: 1;
   transform: translateY(0);
+}
+
+.orbit-container{
+  position:relative;
+  width:500px;
+  height:500px;
+}
+
+@media(max-width:768px){
+  .orbit-container{
+    width:320px;
+    height:320px;
+  }
+}
+
+.orbit-center{
+  position:absolute;
+  width:110px;
+  height:110px;
+  top:50%;
+  left:50%;
+  transform:translate(-50%,-50%);
+  background:#020617;
+  border-radius:50%;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  box-shadow:0 0 50px rgba(99,102,241,0.7);
+  animation:pulse 4s ease-in-out infinite;
+}
+
+.orbit{
+  position:absolute;
+  width:100%;
+  height:100%;
+  border-radius:50%;
+}
+
+.orbit svg{
+  position:absolute;
+  font-size:36px;
+  background:#020617;
+  padding:10px;
+  border-radius:50%;
+  box-shadow:0 10px 30px rgba(0,0,0,0.6);
+  transition:transform .3s, box-shadow .3s;
+}
+
+.orbit svg:hover{
+  transform:scale(1.2);
+  box-shadow:0 0 20px rgba(99,102,241,0.7);
+}
+
+/* ORBIT SPEED */
+
+.orbit-1{
+  animation:spin 18s linear infinite;
+}
+
+.orbit-2{
+  width:360px;
+  height:360px;
+  top:70px;
+  left:70px;
+  animation:spinReverse 22s linear infinite;
+}
+
+.orbit-3{
+  width:260px;
+  height:260px;
+  top:120px;
+  left:120px;
+  animation:spin 26s linear infinite;
+}
+
+/* ICON POSITIONS */
+
+.orbit-1 svg:nth-child(1){ top:-20px; left:50%; transform:translateX(-50%); }
+.orbit-1 svg:nth-child(2){ right:-20px; top:50%; transform:translateY(-50%); }
+.orbit-1 svg:nth-child(3){ bottom:-20px; left:50%; transform:translateX(-50%); }
+.orbit-1 svg:nth-child(4){ left:-20px; top:50%; transform:translateY(-50%); }
+.orbit-1 svg:nth-child(5){ top:20%; right:10%; }
+
+.orbit-2 svg:nth-child(1){ top:-20px; left:50%; transform:translateX(-50%); }
+.orbit-2 svg:nth-child(2){ bottom:-20px; left:50%; transform:translateX(-50%); }
+.orbit-2 svg:nth-child(3){ left:-20px; top:50%; transform:translateY(-50%); }
+
+.orbit-3 svg:nth-child(1){ top:-20px; left:50%; transform:translateX(-50%); }
+.orbit-3 svg:nth-child(2){ bottom:-20px; left:50%; transform:translateX(-50%); }
+.orbit-3 svg:nth-child(3){ right:-20px; top:50%; transform:translateY(-50%); }
+
+/* ANIMATION */
+
+@keyframes spin{
+  from{ transform:rotate(0deg); }
+  to{ transform:rotate(360deg); }
+}
+
+@keyframes spinReverse{
+  from{ transform:rotate(360deg); }
+  to{ transform:rotate(0deg); }
+}
+@keyframes pulse{
+  0%,100%{ box-shadow:0 0 30px rgba(99,102,241,.4); }
+  50%{ box-shadow:0 0 70px rgba(99,102,241,.9); }
 }
 </style>
