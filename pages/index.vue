@@ -720,22 +720,20 @@ useHead({
   meta: [
     {
       name: 'description',
-      content:
-        'Rayival Dede Saputra is a Junior Web Developer and Tech Enthusiast specializing in Vue, Nuxt, Laravel, and creative development including Roblox. Open for collaboration and professional opportunities.',
+      content: 'Rayival Dede Saputra is a Junior Web Developer and Tech Enthusiast specializing in Vue, Nuxt, Laravel, and creative development including Roblox. Open for collaboration and professional opportunities.',
     },
 
-    // Open Graph
+    // Open Graph (Untuk WhatsApp, Facebook, LinkedIn)
     { property: 'og:title', content: 'Rayival Dede Saputra | Junior Web Developer' },
     {
       property: 'og:description',
-      content:
-        'Portfolio of Rayival Dede Saputra — Web Developer, Tech Enthusiast, and Content Creator.',
+      content: 'Portfolio of Rayival Dede Saputra — Web Developer, Tech Enthusiast, and Content Creator.',
     },
     { property: 'og:type', content: 'website' },
-    { property: 'og:url', content: 'https://your-portfolio-url.vercel.app' },
+    { property: 'og:url', content: 'https://rayival.vercel.app' },
     {
       property: 'og:image',
-      content: 'https://your-portfolio-url.vercel.app/og-image.png',
+      content: 'https://rayival.vercel.app/og-image.jpg', 
     },
 
     // Twitter
@@ -746,16 +744,58 @@ useHead({
     },
     {
       name: 'twitter:description',
-      content:
-        'Junior Web Developer & Tech Enthusiast building modern digital experiences.',
+      content: 'Junior Web Developer & Tech Enthusiast building modern digital experiences.',
     },
     {
       name: 'twitter:image',
-      content: 'https://your-portfolio-url.vercel.app/og-image.png',
+      content: 'https://rayival.vercel.app/og-image.png',
     },
   ],
+ 
+  script: [
+    {
+      type: 'application/ld+json',
+      children: JSON.stringify({
+        "@context": "https://schema.org",
+        "@type": "Person",
+        "name": "Rayival Dede Saputra",
+        "nickname": "Valdes",
+        "url": "https://rayival.vercel.app",
+        "image": "https://rayival.vercel.app/og-image.png", 
+        "jobTitle": ["Junior Web Developer", "Tech Enthusiast", "Content Creator"],
+        "description": "Mahasiswa Teknik Informatika di Universitas Perjuangan Tasikmalaya. Spesialis Web Development (Vue, Nuxt, Laravel) dan Roblox Developer.",
+        "affiliation": {
+          "@type": "Organization",
+          "name": "Universitas Perjuangan Tasikmalaya"
+        },
+        "alumniOf": [
+          { "@type": "CollegeOrUniversity", "name": "Universitas Perjuangan Tasikmalaya" },
+          { "@type": "School", "name": "SMKN 4 Tasikmalaya", "award": "PPLG" }
+        ],
+        "hasCredential": [
+          {
+            "@type": "EducationalOccupationalCredential",
+            "name": "Junior Web Developer",
+            "recognizedBy": { "@type": "Organization", "name": "BNSP – LSP Media Informatika" }
+          },
+          {
+            "@type": "EducationalOccupationalCredential",
+            "name": "Belajar Dasar AI",
+            "recognizedBy": { "@type": "Organization", "name": "Dicoding Indonesia" }
+          }
+        ],
+        "knowsAbout": ["Vue.js", "Nuxt", "Laravel", "Tailwind CSS", "Roblox Studio", "Artificial Intelligence", "UI/UX Figma", "JavaScript"],
+        "sameAs": [
+          "https://www.instagram.com/ryvlds_",
+          "https://www.tiktok.com/@ryvlzz",
+          "https://github.com/Rayival",
+          "https://www.youtube.com/@rayivaldedesaputra",
+          "https://www.linkedin.com/in/rayival-dede-saputra-3a06892b3/"
+        ]
+      })
+    }
+  ]
 })
-
 
 onMounted(() => {
   
