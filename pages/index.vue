@@ -288,38 +288,38 @@
 </div>
 
       <!-- ================= TECH STACK ORBIT PREMIUM ================= -->
-    <section class="py-36 bg-slate-950 text-center overflow-hidden">
+    <!-- <section class="py-36 bg-slate-950 text-center overflow-hidden">
 
       <h2 class="text-3xl font-bold mb-20">
         Tech Stack
       </h2>
 
-      <div class="orbit-container mx-auto">
+      <div class="orbit-container mx-auto"> -->
 
         <!-- CENTER -->
-        <div class="orbit-center flex flex-col text-center">
-          <Icon icon="mdi:code-tags" class="text-5xl text-indigo-400" />
+        <!-- <div class="orbit-center flex flex-col text-center">
+          <Icon icon="mdi:code-tags" class="text-5xl text-indigo-400" /> -->
           <!-- <span class="text-[10px] mt-1 text-slate-400">Junior Web Dev</span> -->
-        </div>
+        <!-- </div> -->
 
         <!-- ORBIT 1 (Frontend) -->
-        <div class="orbit orbit-1">
+        <!-- <div class="orbit orbit-1">
           <Icon icon="logos:vue" />
           <Icon icon="logos:react" />
           <Icon icon="logos:javascript" />
           <Icon icon="logos:bootstrap" />
           <Icon icon="logos:tailwindcss-icon" />
-        </div>
+        </div> -->
 
         <!-- ORBIT 2 (Backend) -->
-        <div class="orbit orbit-2">
+        <!-- <div class="orbit orbit-2">
           <Icon icon="logos:nodejs-icon" />
           <Icon icon="logos:laravel" />
           <Icon icon="logos:nuxt-icon" />
-        </div>
+        </div> -->
 
         <!-- ORBIT 3 (Tools) -->
-        <div class="orbit orbit-3">
+        <!-- <div class="orbit orbit-3">
           <Icon icon="logos:git-icon" />
           <Icon icon="logos:figma" />
           <Icon icon="simple-icons:roblox" class="text-white" />
@@ -327,7 +327,7 @@
 
       </div>
 
-    </section>
+    </section> -->
 
     <!-- ================= PROJECTS ================= -->
     <section id="projects" class="fade-up scroll-mt-24 py-32 bg-slate-950">
@@ -351,10 +351,19 @@
               <span
                 v-if="project.type === 'roblox'"
                 class="inline-block mb-2 px-3 py-1 text-xs rounded-full
-                       bg-green-500/10 text-green-400 border border-green-500/20"
+                      bg-green-500/10 text-green-400 border border-green-500/20"
               >
                 🎮 Roblox Game
               </span>
+
+              <span
+                v-if="project.type === 'roblox' && !project.released"
+                class="inline-block mb-2 px-3 py-1 text-xs rounded-full
+                      bg-orange-500/10 text-orange-400 border border-orange-500/20"
+              >
+                🚧 Not Yet Released
+              </span>
+
 
               <h3 class="font-semibold mb-2">{{ project.title }}</h3>
               <p class="text-sm text-slate-400 mb-4">{{ project.description }}</p>
@@ -686,6 +695,7 @@ import fotoProfil from '~/assets/ival1.jpg'
 import perpusImage from '~/assets/Perpus.png'
 import profilImage from '~/assets/profil.png'
 import agroImage from '~/assets/agro.png'
+import tibImage from '~/assets/tib.png'
 import robloxImage from '~/assets/roblox.png'
 import valdexImage from '~/assets/valdex.png'
 import sdnLogo from '~/assets/schools/sdn.png'
@@ -840,7 +850,7 @@ document.querySelectorAll('.fade-up').forEach((el) => {
     entries => {
       if (entries[0].isIntersecting && !hasAnimated) {
         hasAnimated = true
-        animateCounter(projectsCount, 4)
+        animateCounter(projectsCount, 6)
         animateCounter(yearsLearning, 4)
         animateCounter(teamProjects, 1)
       }
@@ -884,13 +894,13 @@ const certifications = [
 ]
 
 const projects = [
+
   {
-    title: 'V4TAS',
-    description: 'Simulation of SMKN 4 Tasikmalaya.',
-    image: robloxImage,
-    link: 'https://www.roblox.com/games/139533647854536/V4TAS',
-    stack: ['Roblox Studio', 'Game Design'],
-    type: 'roblox',
+    title: 'TI-B',
+    description: 'A digital ecosystem of Informatics Engineering Class B 2025 at Universitas Perjuangan Tasikmalaya, designed to showcase class structure, student directory, and visual memories through an interactive, system-inspired interface.',
+    image: tibImage,
+    link: 'https://ti-b.vercel.app/',
+    stack: ['Vue', 'Tailwind', 'Vercel'],
   },
    {
     title: 'VΛLDEX',
@@ -898,6 +908,14 @@ const projects = [
     image: valdexImage,
     link: 'https://valdx.vercel.app/',
     stack: ['Vue', 'Tailwind', 'Vercel'],
+  },
+  {
+    title: 'V4TAS',
+    description: 'Simulation of SMKN 4 Tasikmalaya.',
+    image: robloxImage,
+    link: 'https://www.roblox.com/games/139533647854536/V4TAS',
+    stack: ['Roblox Studio', 'Game Design'],
+    type: 'roblox',
   },
   {
     title: 'Perpus Digital',
