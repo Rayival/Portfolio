@@ -704,6 +704,7 @@ import smkn4Logo from '~/assets/schools/smkn4.png'
 import unperLogo from '~/assets/schools/unper.png'
 import dicodingCert from '~/assets/certificates/dicoding-ai.png'
 import bnspCert from '~/assets/certificates/bnsp-webdev.png'
+import geminiCert from '~/assets/certificates/gemini.jpg'
 
 const projectsCount = ref(0)
 const yearsLearning = ref(0)
@@ -871,6 +872,16 @@ const education = [
 ]
 
 const certifications = [
+  {
+    title: 'Gemini Certified Student',
+    issuer: 'Google for Education',
+    year: '2026',
+    type: 'AI Certification',
+    description:
+  'Certified in foundational AI knowledge and practical usage of Google AI tools, demonstrating the ability to apply AI concepts in real-world and academic scenarios.',
+    image: geminiCert,
+    link: 'https://edu.google.accredible.com/a3b0eb86-f648-4fde-8a39-6058d3551431',
+  },
   {
     title: 'Belajar Dasar AI',
     issuer: 'Dicoding Indonesia',
