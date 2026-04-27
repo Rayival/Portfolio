@@ -100,9 +100,7 @@
           </h1>
 
           <p class="mt-6 max-w-xl mx-auto lg:mx-0 text-slate-300">
-            Crafting clean, scalable, and high-performance web apps using
-            <strong>Vue</strong>, <strong>Nuxt</strong>, <strong>Laravel</strong>,
-            and creative tech like <strong>Roblox Studio</strong>.
+            Blending technology and creativity to build digital experiences that are not only functional, but meaningful.
           </p>
 
           <!-- STATS -->
@@ -197,26 +195,23 @@
 
         <p class="text-slate-600 max-w-3xl mb-10">
           <svg
-          class="mb-14"
-          width="120"
-          height="8"
-          viewBox="0 0 120 8"
-          fill="none"
-        >
-          <rect width="120" height="8" rx="4" fill="url(#aboutGrad)" />
-          <defs>
-            <linearGradient id="aboutGrad" x1="0" y1="0" x2="120" y2="0">
-              <stop stop-color="#6366F1" />
-              <stop offset="1" stop-color="#22D3EE" />
-            </linearGradient>
-          </defs>
+            class="mb-14"
+            width="120"
+            height="8"
+            viewBox="0 0 120 8"
+            fill="none"
+          >
+            <rect width="120" height="8" rx="4" fill="url(#aboutGrad)" />
+            <defs>
+              <linearGradient id="aboutGrad" x1="0" y1="0" x2="120" y2="0">
+                <stop stop-color="#6366F1" />
+                <stop offset="1" stop-color="#22D3EE" />
+              </linearGradient>
+            </defs>
           </svg>
-          Informatics Engineering student with a strong interest in
-          <span class="font-semibold text-indigo-600">Web Development</span>,
-          <span class="font-semibold text-cyan-600">Roblox Development</span>,
-          <span class="font-semibold text-indigo-600">Content Creation</span>,
-          and emerging technologies as a
-          <span class="font-semibold">Tech Enthusiast</span>.
+
+          An Informatics Engineering student who is passionate about building digital experiences and continuously growing in the world of technology.
+          I focus on turning ideas into real solutions while exploring creativity through development and content creation.
         </p>
 
 
@@ -615,7 +610,7 @@
 
       <!-- INSTAGRAM -->
       <a
-        href="https://instagram.com/ryvlds_"
+        href="https://instagram.com/rayivaldedesaputra_"
         target="_blank"
         class="group p-6 rounded-2xl bg-slate-900 border border-slate-800 hover:border-indigo-500 transition"
       >
@@ -628,7 +623,7 @@
           <h3 class="font-semibold">Instagram</h3>
 
           <p class="text-sm text-slate-400">
-            @ryvlds_
+            @rayivaldedesaputra_
           </p>
 
         </div>
@@ -797,7 +792,7 @@ useHead({
         ],
         "knowsAbout": ["Vue.js", "Nuxt", "Laravel", "Tailwind CSS", "Roblox Studio", "Artificial Intelligence", "UI/UX Figma", "JavaScript"],
         "sameAs": [
-          "https://www.instagram.com/ryvlds_",
+          "https://www.instagram.com/rayivaldedesaputra_",
           "https://www.tiktok.com/@ryvlzz",
           "https://github.com/Rayival",
           "https://www.youtube.com/@rayivaldedesaputra",
