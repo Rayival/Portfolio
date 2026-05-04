@@ -793,7 +793,7 @@ const techStack = ['Vue.js', 'Nuxt', 'JavaScript', 'Laravel', 'Tailwind CSS', 'G
 const education = [
   { level: 'SD', school: 'SDN Pahlawan Tasikmalaya', year: '2013–2019', logo: sdnLogo },
   { level: 'SMP', school: 'SMPN 11 Tasikmalaya', year: '2019–2022', logo: smpnLogo },
-  { level: 'SMK', school: 'SMKN 4 Tasikmalaya – PPLG', year: '2022–2025', logo: smkn4Logo },
+  { level: 'SMK', school: 'SMKN 4 Tasikmalaya', year: '2022–2025', logo: smkn4Logo, major: 'Software & Game Development' },
   { level: 'University', school: 'Universitas Perjuangan Tasikmalaya', year: '2025–Now', logo: unperLogo, major: 'Informatics Engineering' },
 ]
 
