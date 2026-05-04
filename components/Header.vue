@@ -1,18 +1,20 @@
 <template>
   <header
-    class="fixed top-0 inset-x-0 z-50
-           backdrop-blur-md bg-slate-950/70
-           border-b border-white/5"
+    class="fixed top-4 inset-x-0 z-50 flex justify-center px-6"
   >
-    <div class="max-w-7xl mx-auto px-6 h-16 flex items-center justify-between">
-
+    <div 
+      class="w-full max-w-4xl backdrop-blur-xl bg-slate-950/40 border border-white/10 rounded-2xl px-8 h-16 flex items-center justify-between shadow-[0_8px_32px_rgba(0,0,0,0.3)] transition-all duration-500"
+      :class="{ 'max-w-7xl h-20': !isScrolled }"
+    >
       <!-- BRAND -->
       <a
         href="#home"
-        class="font-bold text-lg tracking-wide
-               text-white hover:text-indigo-400 transition"
+        class="group flex items-center gap-2"
       >
-        Rayival
+        <div class="w-8 h-8 rounded-lg bg-gradient-to-tr from-indigo-600 to-cyan-400 flex items-center justify-center text-white font-bold transition-transform group-hover:rotate-12">
+          R
+        </div>
+        <span class="font-bold text-lg tracking-tight text-white">Rayival</span>
       </a>
 
       <!-- DESKTOP NAV -->
@@ -87,9 +89,22 @@
 </template>
 
 <script setup>
-import { ref } from 'vue'
+import { ref, onMounted, onUnmounted } from 'vue'
 
 const open = ref(false)
+const isScrolled = ref(false)
+
+const handleScroll = () => {
+  isScrolled.value = window.scrollY > 50
+}
+
+onMounted(() => {
+  window.addEventListener('scroll', handleScroll)
+})
+
+onUnmounted(() => {
+  window.removeEventListener('scroll', handleScroll)
+})
 
 const navItems = [
   { label: 'Home', href: '#home' },

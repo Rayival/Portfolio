@@ -58,7 +58,14 @@
   </div>
 </div>
 
-  <div class="bg-gradient-to-b from-slate-950 via-slate-900 to-slate-950 text-slate-100">
+  <div class="bg-slate-950 text-slate-100 selection:bg-indigo-500/30 selection:text-white">
+    
+    <!-- Background Decoration -->
+    <div class="fixed inset-0 z-0 pointer-events-none overflow-hidden">
+      <div class="absolute top-[-10%] left-[-10%] w-[40%] h-[40%] bg-indigo-600/10 blur-[120px] rounded-full"></div>
+      <div class="absolute bottom-[-10%] right-[-10%] w-[40%] h-[40%] bg-cyan-500/10 blur-[120px] rounded-full"></div>
+      <div class="absolute inset-0 bg-[url('https://grainy-gradients.vercel.app/noise.svg')] opacity-[0.03] contrast-150 brightness-100"></div>
+    </div>
 
     <!-- ================= HERO ================= -->
      
@@ -72,25 +79,25 @@
         class="relative z-10 max-w-7xl mx-auto px-6 grid lg:grid-cols-2 gap-16 items-center text-center lg:text-left"
       >
         <!-- TEXT -->
-        <div class="fade-up">
-          <p class="flex justify-center lg:justify-start items-center gap-2 text-indigo-400 mb-4">
-            <span class="w-2 h-2 bg-indigo-500 rounded-full"></span>
+        <div>
+          <p class="reveal flex justify-center lg:justify-start items-center gap-2 text-indigo-400 mb-4">
+            <span class="w-2 h-2 bg-indigo-500 rounded-full animate-pulse"></span>
             Hi, I’m Rayival Dede Saputra
           </p>
 
-          <div class="flex justify-center lg:justify-start flex-wrap gap-4 text-3xl text-slate-400 mb-6">
-            <Icon icon="logos:vue" />
-            <Icon icon="logos:nuxt-icon" />
-            <Icon icon="logos:javascript" />
-            <Icon icon="logos:react" />
-            <Icon icon="logos:laravel" />
-            <Icon icon="logos:tailwindcss-icon" />
-            <Icon icon="logos:git-icon" />
-            <Icon icon="logos:figma" />
-            <Icon icon="simple-icons:roblox" class="text-white" />
+          <div class="reveal stagger-1 flex justify-center lg:justify-start flex-wrap gap-4 text-3xl text-slate-400 mb-6">
+            <Icon icon="logos:vue" class="hover:scale-110 transition-transform" />
+            <Icon icon="logos:nuxt-icon" class="hover:scale-110 transition-transform" />
+            <Icon icon="logos:javascript" class="hover:scale-110 transition-transform" />
+            <Icon icon="logos:react" class="hover:scale-110 transition-transform" />
+            <Icon icon="logos:laravel" class="hover:scale-110 transition-transform" />
+            <Icon icon="logos:tailwindcss-icon" class="hover:scale-110 transition-transform" />
+            <Icon icon="logos:git-icon" class="hover:scale-110 transition-transform" />
+            <Icon icon="logos:figma" class="hover:scale-110 transition-transform" />
+            <Icon icon="simple-icons:roblox" class="text-white hover:scale-110 transition-transform" />
           </div>
 
-          <h1 class="text-4xl md:text-5xl xl:text-6xl font-extrabold leading-tight">
+          <h1 class="reveal stagger-2 text-4xl md:text-5xl xl:text-6xl font-extrabold leading-tight">
             A
             <span class="bg-gradient-to-r from-indigo-400 to-cyan-400 bg-clip-text text-transparent">
               Tech Enthusiast
@@ -99,250 +106,204 @@
             Building Modern Digital Experiences
           </h1>
 
-          <p class="mt-6 max-w-xl mx-auto lg:mx-0 text-slate-300">
+          <p class="reveal stagger-3 mt-6 max-w-xl mx-auto lg:mx-0 text-slate-300">
             Blending technology and creativity to build digital experiences that are not only functional, but meaningful.
           </p>
 
           <!-- STATS -->
-          <div ref="statsRef" class="mt-10 flex justify-center lg:justify-start gap-10 text-center">
+          <div ref="statsRef" class="reveal stagger-4 mt-10 flex justify-center lg:justify-start gap-10 text-center">
             <div>
-              <p class="text-3xl font-bold">{{ projectsCount }}+</p>
+              <p class="text-3xl font-bold text-white">{{ projectsCount }}+</p>
               <p class="text-sm text-slate-400">Projects</p>
             </div>
             <div>
-              <p class="text-3xl font-bold">{{ yearsLearning }}+</p>
+              <p class="text-3xl font-bold text-white">{{ yearsLearning }}+</p>
               <p class="text-sm text-slate-400">Years Learning</p>
             </div>
             <div>
-              <p class="text-3xl font-bold">{{ teamProjects }}</p>
+              <p class="text-3xl font-bold text-white">{{ teamProjects }}</p>
               <p class="text-sm text-slate-400">Team Project</p>
             </div>
           </div>
 
-          <div class="mt-10 flex flex-col sm:flex-row gap-4 justify-center lg:justify-start">
+          <div class="reveal stagger-4 mt-10 flex flex-col sm:flex-row gap-4 justify-center lg:justify-start">
             <a
               href="#projects"
-              class="px-6 py-3 rounded-xl bg-indigo-600 hover:bg-indigo-500 transition font-semibold"
+              class="px-8 py-3 rounded-xl bg-gradient-to-r from-indigo-600 to-indigo-500 hover:from-indigo-500 hover:to-indigo-400 text-white transition-all shadow-[0_0_20px_rgba(79,70,229,0.3)] hover:shadow-[0_0_30px_rgba(79,70,229,0.5)] font-semibold"
             >
               View Projects
             </a>
             <a
               href="#contact"
-              class="px-6 py-3 rounded-xl border border-slate-600 hover:border-indigo-500 transition"
+              class="px-8 py-3 rounded-xl border border-slate-700 hover:border-indigo-400 text-slate-300 hover:text-white transition-all bg-slate-900/50 backdrop-blur-sm"
             >
               Contact Me
             </a>
           </div>
         </div>
 
-        <!-- AVATAR -->
-        <div class="flex justify-center fade-up">
+        <div class="flex justify-center fade-up lg:order-last">
           <div
-            class="w-56 h-56 sm:w-64 sm:h-64 rounded-full p-1 bg-gradient-to-tr from-indigo-500 to-cyan-400 shadow-[0_0_60px_rgba(99,102,241,0.6)]"
+            class="relative w-64 h-64 sm:w-80 sm:h-80 lg:w-[450px] lg:h-[450px]"
           >
-            <img :src="fotoProfil" class="w-full h-full rounded-full object-cover" />
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- HERO → ABOUT DIVIDER -->
-<div class="relative overflow-hidden bg-slate-950">
-  <svg
-    viewBox="0 0 1440 100"
-    class="block w-full h-[64px] rotate-180 opacity-95"
-    preserveAspectRatio="none"
-  >
-    <path
-      fill="#ffffff"
-      d="M0,32L60,37.3C120,43,240,53,360,48C480,43,600,21,720,16C840,11,960,21,1080,32C1200,43,1320,53,1380,58.7L1440,64L1440,0L0,0Z"
-    />
-  </svg>
-</div>
-
-
-
-    <!-- ================= ABOUT ================= -->
-   <section
-  id="about"
-  class="fade-up scroll-mt-24 relative pt-36 pb-32
-         bg-gradient-to-b from-white via-slate-50 to-white
-         text-slate-900 overflow-hidden"
->
-
-  <!-- GLOW BACKGROUND (TARUH PALING ATAS) -->
-  <div class="absolute -top-40 -left-40 w-[500px] h-[500px]
-              bg-indigo-400/20 rounded-full blur-3xl"></div>
-
-  <div class="absolute top-1/2 -right-40 w-[400px] h-[400px]
-              bg-cyan-400/20 rounded-full blur-3xl"></div>
-
-  <!-- TEXTURE / DOT PATTERN -->
-  <div
-    class="absolute inset-0 opacity-[0.02]
-           bg-[radial-gradient(circle_at_1px_1px,_#000_1px,_transparent_0)]
-           bg-[length:28px_28px]"
-  ></div>
-
-  <!-- CONTAINER YANG HILANG -->
-  <div class="relative max-w-6xl mx-auto px-6">
-
-
-        <h2 class="text-3xl font-bold mb-6 flex items-center gap-3">
-          <AcademicCapIcon class="w-8 h-8 text-indigo-600" />
-          About Me
-        </h2>
-
-        <p class="text-slate-600 max-w-3xl mb-10">
-          <svg
-            class="mb-14"
-            width="120"
-            height="8"
-            viewBox="0 0 120 8"
-            fill="none"
-          >
-            <rect width="120" height="8" rx="4" fill="url(#aboutGrad)" />
-            <defs>
-              <linearGradient id="aboutGrad" x1="0" y1="0" x2="120" y2="0">
-                <stop stop-color="#6366F1" />
-                <stop offset="1" stop-color="#22D3EE" />
-              </linearGradient>
-            </defs>
-          </svg>
-
-          An Informatics Engineering student who is passionate about building digital experiences and continuously growing in the world of technology.
-          I focus on turning ideas into real solutions while exploring creativity through development and content creation.
-        </p>
-
-
-        <div class="flex flex-wrap gap-3 mb-20">
-          <span
-            v-for="tech in techStack"
-            :key="tech"
-            class="px-4 py-1 rounded-full text-sm text-white bg-gradient-to-tr from-indigo-600 to-cyan-500 shadow"
-          >
-            {{ tech }}
-          </span>
-        </div>
-
-        <div class="grid sm:grid-cols-3 gap-6 mb-24">
-  <div class="p-6 rounded-2xl bg-indigo-50 border border-indigo-100">
-    <h4 class="font-semibold mb-2 text-indigo-700">Web Developer</h4>
-    <p class="text-sm text-slate-600">
-      Building clean, responsive, and scalable web applications.
-    </p>
-  </div>
-
-  <div class="p-6 rounded-2xl bg-cyan-50 border border-cyan-100">
-    <h4 class="font-semibold mb-2 text-cyan-700">Roblox Developer</h4>
-    <p class="text-sm text-slate-600">
-      Gameplay logic, systems, and creative virtual experiences.
-    </p>
-  </div>
-
-  <div class="p-6 rounded-2xl bg-indigo-50 border border-indigo-100">
-    <h4 class="font-semibold mb-2 text-indigo-700">Content Creator</h4>
-    <p class="text-sm text-slate-600">
-      Sharing tech knowledge and development journey.
-    </p>
-    </div>
-  </div>
-
-  <div class="flex items-center gap-2 mb-6 text-sm font-semibold text-indigo-600">
-  <span class="w-2 h-2 rounded-full bg-indigo-600"></span>
-  Education Journey
-</div>
-
-
-        <div class="space-y-6 border-l-2 border-indigo-500 pl-6">
-          <div v-for="edu in education" :key="edu.level" class="relative flex gap-4">
-            <span class="absolute -left-[14px] top-4 w-3 h-3 bg-indigo-600 rounded-full"></span>
-            <img :src="edu.logo" class="w-10 h-10 bg-white rounded-md p-1 shadow" />
-            <div>
-              <h4 class="font-semibold">{{ edu.level }} — {{ edu.school }}</h4>
-              <p class="text-sm text-slate-500">{{ edu.year }}</p>
+            <!-- Decorative rings -->
+            <div class="absolute inset-0 rounded-full border-2 border-indigo-500/20 animate-[spin_10s_linear_infinite]"></div>
+            <div class="absolute inset-4 rounded-full border border-cyan-400/20 animate-[spin_15s_linear_infinite_reverse]"></div>
+            
+            <div class="w-full h-full rounded-3xl overflow-hidden shadow-[0_0_50px_rgba(99,102,241,0.4)] transition-transform duration-500 hover:scale-105">
+              <img :src="avaValdes" class="w-full h-full object-cover" alt="Rayival Dede Saputra" />
+            </div>
+            
+            <!-- Floating badges -->
+            <div class="absolute -bottom-4 -right-4 bg-slate-900/80 backdrop-blur-md p-4 rounded-2xl border border-slate-700 shadow-xl hidden sm:block">
+              <div class="flex items-center gap-3">
+                <div class="w-10 h-10 rounded-full bg-indigo-500 flex items-center justify-center">
+                  <Icon icon="mdi:rocket-launch" class="text-white text-xl" />
+                </div>
+                <div>
+                  <p class="text-xs text-slate-400">Status</p>
+                  <p class="text-sm font-bold">Ready to Work</p>
+                </div>
+              </div>
             </div>
           </div>
         </div>
       </div>
     </section>
 
+    <section
+      id="about"
+      class="scroll-mt-24 relative pt-32 pb-32 bg-white text-slate-900 overflow-hidden"
+    >
+      <!-- GLOW BACKGROUND -->
+      <div class="absolute -top-40 -left-40 w-[500px] h-[500px] bg-indigo-400/20 rounded-full blur-3xl pointer-events-none"></div>
+      <div class="absolute top-1/2 -right-40 w-[400px] h-[400px] bg-cyan-400/20 rounded-full blur-3xl pointer-events-none"></div>
+      
+      <!-- TEXTURE / DOT PATTERN -->
+      <div class="absolute inset-0 opacity-[0.03] bg-[radial-gradient(circle_at_1px_1px,_#000_1px,_transparent_0)] bg-[length:28px_28px] pointer-events-none"></div>
+      
+      <div class="relative max-w-6xl mx-auto px-6">
+        <div class="grid lg:grid-cols-2 gap-12 items-center">
+          <div>
+            <h2 class="reveal text-3xl font-bold mb-6 flex items-center gap-3">
+              <AcademicCapIcon class="w-8 h-8 text-indigo-600" />
+              About Me
+            </h2>
 
-<!-- ABOUT → PROJECTS DIVIDER -->
-<div class="relative overflow-hidden bg-white">
-  <svg
-    viewBox="0 0 1440 100"
-    class="block w-full h-[80px]"
-    preserveAspectRatio="none"
-  >
-    <path
-      fill="#020617"
-      d="M0,20 C240,60 480,100 720,80 960,60 1200,20 1440,40 L1440,100 L0,100 Z"
-    />
-  </svg>
-</div>
+            <p class="reveal stagger-1 text-slate-600 max-w-3xl mb-10 leading-relaxed">
+              An Informatics Engineering student who is passionate about building digital experiences and continuously growing in the world of technology.
+              I focus on turning ideas into real solutions while exploring creativity through development and content creation.
+            </p>
 
-      <!-- ================= TECH STACK ORBIT PREMIUM ================= -->
-    <!-- <section class="py-36 bg-slate-950 text-center overflow-hidden">
+            <div class="reveal stagger-2 flex flex-wrap gap-3 mb-10">
+              <span
+                v-for="tech in techStack"
+                :key="tech"
+                class="px-4 py-1.5 rounded-full text-xs font-semibold text-indigo-700 bg-indigo-100/50 border border-indigo-200 shadow-sm"
+              >
+                {{ tech }}
+              </span>
+            </div>
 
-      <h2 class="text-3xl font-bold mb-20">
-        Tech Stack
-      </h2>
+            <div class="grid sm:grid-cols-3 gap-4 mb-10">
+              <div class="reveal stagger-1 p-4 rounded-2xl bg-white/60 border border-slate-200 shadow-sm backdrop-blur-md hover:-translate-y-1 transition-transform">
+                <h4 class="font-bold mb-1 text-indigo-700 text-sm">Web Developer</h4>
+                <p class="text-[12px] text-slate-600">
+                  Building clean, responsive, and scalable web applications.
+                </p>
+              </div>
 
-      <div class="orbit-container mx-auto"> -->
+              <div class="reveal stagger-2 p-4 rounded-2xl bg-white/60 border border-slate-200 shadow-sm backdrop-blur-md hover:-translate-y-1 transition-transform">
+                <h4 class="font-bold mb-1 text-cyan-700 text-sm">Roblox Developer</h4>
+                <p class="text-[12px] text-slate-600">
+                  Gameplay logic, systems, and creative virtual experiences.
+                </p>
+              </div>
 
-        <!-- CENTER -->
-        <!-- <div class="orbit-center flex flex-col text-center">
-          <Icon icon="mdi:code-tags" class="text-5xl text-indigo-400" /> -->
-          <!-- <span class="text-[10px] mt-1 text-slate-400">Junior Web Dev</span> -->
-        <!-- </div> -->
+              <div class="reveal stagger-3 p-4 rounded-2xl bg-white/60 border border-slate-200 shadow-sm backdrop-blur-md hover:-translate-y-1 transition-transform">
+                <h4 class="font-bold mb-1 text-indigo-700 text-sm">Content Creator</h4>
+                <p class="text-[12px] text-slate-600">
+                  Sharing tech knowledge and development journey.
+                </p>
+              </div>
+            </div>
 
-        <!-- ORBIT 1 (Frontend) -->
-        <!-- <div class="orbit orbit-1">
-          <Icon icon="logos:vue" />
-          <Icon icon="logos:react" />
-          <Icon icon="logos:javascript" />
-          <Icon icon="logos:bootstrap" />
-          <Icon icon="logos:tailwindcss-icon" />
-        </div> -->
+            <div class="reveal stagger-3 space-y-6">
+              <div class="flex items-center gap-2 text-sm font-bold text-indigo-600 uppercase tracking-wider">
+                <span class="w-8 h-[2px] bg-indigo-600"></span>
+                Education Journey
+              </div>
 
-        <!-- ORBIT 2 (Backend) -->
-        <!-- <div class="orbit orbit-2">
-          <Icon icon="logos:nodejs-icon" />
-          <Icon icon="logos:laravel" />
-          <Icon icon="logos:nuxt-icon" />
-        </div> -->
+              <div class="space-y-6 border-l-2 border-indigo-200 ml-4 pl-6">
+                <div v-for="(edu, idx) in education" :key="edu.level" class="relative flex gap-4 reveal" :style="`transition-delay: ${idx * 100}ms`">
+                  <span class="absolute -left-[33px] top-1 w-4 h-4 bg-white border-2 border-indigo-600 rounded-full shadow-sm"></span>
+                  <img :src="edu.logo" class="w-10 h-10 bg-white rounded-xl p-1.5 shadow-sm border border-slate-100 object-contain" />
+                  <div>
+                    <h4 class="font-bold text-slate-800 text-sm">{{ edu.level }} — {{ edu.school }}</h4>
+                    <p v-if="edu.major" class="text-[11px] text-indigo-600 font-bold mb-0.5 uppercase">{{ edu.major }}</p>
+                    <p class="text-xs text-slate-500 font-medium">{{ edu.year }}</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
 
-        <!-- ORBIT 3 (Tools) -->
-        <!-- <div class="orbit orbit-3">
-          <Icon icon="logos:git-icon" />
-          <Icon icon="logos:figma" />
-          <Icon icon="simple-icons:roblox" class="text-white" />
+            <!-- ABOUT IMAGE -->
+            <div class="reveal relative group hidden lg:block">
+              <div class="absolute -inset-4 bg-gradient-to-tr from-indigo-500 to-cyan-400 rounded-[2rem] blur-2xl opacity-20 group-hover:opacity-40 transition duration-500"></div>
+              <div class="relative rounded-[2rem] overflow-hidden border-8 border-white shadow-2xl transform rotate-3 group-hover:rotate-0 transition duration-500">
+                <img :src="fotoProfil" class="w-full aspect-square object-cover" alt="Profile" />
+                <div class="absolute inset-0 bg-gradient-to-t from-black/60 via-black/20 to-transparent flex items-end p-8 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                  <div class="translate-y-4 group-hover:translate-y-0 transition-transform duration-300">
+                    <p class="text-white font-bold text-xl">Rayival Dede Saputra</p>
+                    <p class="text-indigo-200 text-sm">Informatics Engineering Student</p>
+                  </div>
+                </div>
+              </div>
+              
+              <!-- Mobile/Small view image in about me -->
+              <div class="absolute -bottom-6 -left-6 w-32 h-32 rounded-full border-4 border-white shadow-xl overflow-hidden hover:scale-110 transition-transform duration-300">
+                 <img :src="fotoProfil" class="w-full h-full object-cover" />
+              </div>
+            </div>
+            
+            <!-- Mobile About Image (Visible on mobile only) -->
+            <div class="reveal lg:hidden mt-8 flex justify-center">
+              <div class="relative w-48 h-48 rounded-full p-1 bg-gradient-to-tr from-indigo-500 to-cyan-400 shadow-xl">
+                 <img :src="fotoProfil" class="w-full h-full rounded-full object-cover border-4 border-white" />
+              </div>
+            </div>
+          </div>
         </div>
+    </section>
 
-      </div>
-
-    </section> -->
 
     <!-- ================= PROJECTS ================= -->
-    <section id="projects" class="fade-up scroll-mt-24 py-32 bg-slate-950">
-      <div class="max-w-7xl mx-auto px-6">
-        <h2 class="text-3xl font-bold text-center mb-20">Selected Projects</h2>
+    <section id="projects" class="scroll-mt-24 py-32 bg-slate-950 relative overflow-hidden">
+      <!-- GLOW -->
+      <div class="absolute top-0 right-0 w-[600px] h-[600px] bg-indigo-600/10 rounded-full blur-[100px] pointer-events-none"></div>
+
+      <div class="relative max-w-7xl mx-auto px-6">
+        <h2 class="reveal text-3xl font-bold text-center mb-20 text-white">Selected Projects</h2>
 
         <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-10">
           <div
-            v-for="project in projects"
+            v-for="(project, idx) in projects"
             :key="project.title"
-            class="rounded-2xl bg-slate-900 overflow-hidden transition-all duration-300
-                   hover:scale-[1.02] hover:ring-1 hover:ring-indigo-500/30
-                   hover:shadow-[0_0_40px_rgba(99,102,241,0.15)]"
+            class="reveal glass-card rounded-2xl overflow-hidden group flex flex-col h-full"
+            :style="`transition-delay: ${idx * 100}ms`"
           >
-            <img
-              :src="project.image"
-              class="h-48 w-full object-cover transition duration-500 group-hover:scale-110"
-            />
+            <div class="relative overflow-hidden shrink-0">
+              <img
+                :src="project.image"
+                class="h-56 w-full object-cover transition-transform duration-700 group-hover:scale-110"
+              />
+              <div class="absolute inset-0 bg-gradient-to-t from-slate-950/90 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 flex items-end p-6">
+                <p class="text-white text-xs font-medium">{{ project.stack.join(' • ') }}</p>
+              </div>
+            </div>
 
-            <div class="p-6">
+            <div class="p-6 flex flex-col grow">
               <span
                 v-if="project.type === 'roblox'"
                 class="inline-block mb-2 px-3 py-1 text-xs rounded-full
@@ -367,69 +328,48 @@
                 {{ project.stack.join(' • ') }}
               </p>
 
-              <a
-                :href="project.link"
-                target="_blank"
-                rel="noopener"
-                class="inline-flex items-center gap-2 text-indigo-400 hover:text-indigo-300"
-              >
-                {{ project.type === 'roblox' ? 'Play on Roblox' : 'View Project' }}
-                <ArrowTopRightOnSquareIcon class="w-4 h-4" />
-              </a>
+              <div class="mt-auto pt-4">
+                <a
+                  :href="project.link"
+                  target="_blank"
+                  rel="noopener"
+                  class="inline-flex items-center gap-2 text-indigo-400 hover:text-indigo-300 font-medium transition-colors"
+                >
+                  {{ project.type === 'roblox' ? 'Play on Roblox' : 'View Project' }}
+                  <ArrowTopRightOnSquareIcon class="w-4 h-4" />
+                </a>
+              </div>
             </div>
           </div>
         </div>
       </div>
     </section>
 
-    <!-- PROJECTS → CERTIFICATIONS DIVIDER -->
-<div class="relative overflow-hidden bg-slate-950">
-  <svg
-    viewBox="0 0 1440 100"
-    class="block w-full h-[80px] rotate-180"
-    preserveAspectRatio="none"
-  >
-    <path
-      fill="#ffffff"
-      d="M0,32 C240,64 480,0 720,16 960,32 1200,64 1440,32 L1440,0 L0,0 Z"
-    />
-  </svg>
-</div>
-
-
   <!-- ================= CERTIFICATIONS ================= -->
   <section
-  id="certifications"
-  class="fade-up scroll-mt-24 relative py-36 bg-gradient-to-b from-white to-slate-50
-         text-slate-900 overflow-hidden">
-
-  <!-- (1) GLOW SPOTLIGHT -->
-  <div class="absolute inset-0">
-    <div class="absolute top-1/3 left-1/2 -translate-x-1/2
-                w-[600px] h-[600px]
-                bg-indigo-500/15 blur-3xl rounded-full">
+    id="certifications"
+    class="scroll-mt-24 relative py-36 bg-white text-slate-900 overflow-hidden"
+  >
+    <!-- GLOW SPOTLIGHT -->
+    <div class="absolute inset-0 pointer-events-none">
+      <div class="absolute top-1/3 left-1/2 -translate-x-1/2 w-[600px] h-[600px] bg-indigo-500/10 blur-3xl rounded-full"></div>
     </div>
-  </div>
 
     <div class="relative max-w-6xl mx-auto px-6">
-      <h2 class="text-3xl font-bold text-center mb-4">
+      <h2 class="reveal text-3xl font-bold text-center mb-4">
          Professional Certifications
       </h2>
-      <p class="text-center text-slate-500 mb-20 max-w-xl mx-auto">
+      <p class="reveal stagger-1 text-center text-slate-500 mb-20 max-w-xl mx-auto">
         Industry-recognized certifications validating my technical competence and professional readiness
       </p>  
 
       <div class="grid md:grid-cols-2 gap-10">
         <div
-          v-for="cert in certifications"
+          v-for="(cert, idx) in certifications"
           :key="cert.title"
-          :class="[
-            'group rounded-2xl p-6 border transition-all duration-300 hover:-translate-y-1 hover:shadow-xl',
-          cert.type === 'National Certification'
-            ? 'bg-gradient-to-br from-white to-indigo-50 border-indigo-200'
-            : 'bg-white border-slate-200'
-        ]"
-      >
+          class="reveal bg-white border border-slate-200 group rounded-2xl p-6 transition-all duration-300 hover:-translate-y-2 hover:shadow-[0_20px_40px_-15px_rgba(99,102,241,0.15)] hover:border-indigo-200"
+          :style="`transition-delay: ${idx * 100}ms`"
+        >
 
           <!-- badge -->
           <span
@@ -473,73 +413,69 @@
     </div>
   </section>
 
-  <section class="py-24 bg-slate-950 text-slate-100">
-  <div class="max-w-5xl mx-auto px-6 text-center">
-    <h3 class="text-2xl font-bold mb-6">
-      What These Certifications Mean
-    </h3>
-    <p class="text-slate-400 max-w-3xl mx-auto mb-12">
-      Beyond certificates, these experiences strengthened my problem-solving mindset,
-      industry understanding, and readiness to work in real-world development environments.
-    </p>
+  <section class="py-24 bg-slate-900 text-slate-100 relative overflow-hidden">
+    <!-- Inner Glow -->
+    <div class="absolute inset-0 bg-[radial-gradient(ellipse_at_top,_var(--tw-gradient-stops))] from-indigo-900/20 via-slate-900 to-slate-900 pointer-events-none"></div>
+    
+    <div class="relative max-w-5xl mx-auto px-6 text-center">
+      <h3 class="reveal text-2xl font-bold mb-6 text-white">
+        What These Certifications Mean
+      </h3>
+      <p class="reveal stagger-1 text-slate-400 max-w-3xl mx-auto mb-16 leading-relaxed">
+        Beyond certificates, these experiences strengthened my problem-solving mindset,
+        industry understanding, and readiness to work in real-world development environments.
+      </p>
 
-    <div class="grid sm:grid-cols-3 gap-6">
-      <div class="p-6 rounded-2xl bg-slate-900 border border-slate-800">
-        <h4 class="font-semibold mb-2">Technical Foundation</h4>
-        <p class="text-sm text-slate-400">
-          Strong fundamentals in programming, software development, and AI concepts.
-        </p>
-      </div>
+      <div class="grid sm:grid-cols-3 gap-6">
+        <div class="reveal stagger-1 p-8 rounded-2xl bg-slate-800/50 border border-slate-700/50 backdrop-blur-sm hover:bg-slate-800 transition-colors">
+          <div class="w-12 h-12 bg-indigo-500/10 rounded-xl flex items-center justify-center mb-6 mx-auto text-indigo-400">
+            <Icon icon="mdi:code-braces" class="text-2xl" />
+          </div>
+          <h4 class="font-bold mb-3 text-white">Technical Foundation</h4>
+          <p class="text-sm text-slate-400 leading-relaxed">
+            Strong fundamentals in programming, software development, and AI concepts.
+          </p>
+        </div>
 
-      <div class="p-6 rounded-2xl bg-slate-900 border border-slate-800">
-        <h4 class="font-semibold mb-2">Industry Standards</h4>
-        <p class="text-sm text-slate-400">
-          Certified against national competency standards (BNSP).
-        </p>
-      </div>
+        <div class="reveal stagger-2 p-8 rounded-2xl bg-slate-800/50 border border-slate-700/50 backdrop-blur-sm hover:bg-slate-800 transition-colors">
+          <div class="w-12 h-12 bg-cyan-500/10 rounded-xl flex items-center justify-center mb-6 mx-auto text-cyan-400">
+            <Icon icon="mdi:shield-check" class="text-2xl" />
+          </div>
+          <h4 class="font-bold mb-3 text-white">Industry Standards</h4>
+          <p class="text-sm text-slate-400 leading-relaxed">
+            Certified against national competency standards (BNSP).
+          </p>
+        </div>
 
-      <div class="p-6 rounded-2xl bg-slate-900 border border-slate-800">
-        <h4 class="font-semibold mb-2">Professional Readiness</h4>
-        <p class="text-sm text-slate-400">
-          Ready to collaborate, learn fast, and adapt in professional teams.
-        </p>
+        <div class="reveal stagger-3 p-8 rounded-2xl bg-slate-800/50 border border-slate-700/50 backdrop-blur-sm hover:bg-slate-800 transition-colors">
+          <div class="w-12 h-12 bg-indigo-500/10 rounded-xl flex items-center justify-center mb-6 mx-auto text-indigo-400">
+            <Icon icon="mdi:account-group" class="text-2xl" />
+          </div>
+          <h4 class="font-bold mb-3 text-white">Professional Readiness</h4>
+          <p class="text-sm text-slate-400 leading-relaxed">
+            Ready to collaborate, learn fast, and adapt in professional teams.
+          </p>
+        </div>
       </div>
     </div>
-  </div>
-</section>
-
-<!-- CERTIFICATIONS → CONTACT -->
-<div class="relative bg-slate-950">
-  <div class="absolute inset-x-0 top-0 h-px
-            bg-gradient-to-r
-            from-transparent via-indigo-500/30 to-transparent">
-</div>
-  <svg
-    viewBox="0 0 1440 120"
-    class="block w-full h-[96px]"
-    preserveAspectRatio="none"
-  >
-    <path
-      fill="#020617"
-      d="M0,40L80,48C160,56,320,72,480,69.3C640,67,800,45,960,37.3C1120,29,1280,35,1360,38.7L1440,42L1440,0L0,0Z"
-    />
-  </svg>
-</div>
-
+  </section>
 
   <!-- ================= CONTACT ================= -->
 <section
   id="contact"
-  class="fade-up scroll-mt-24 relative py-36 bg-gradient-to-b from-slate-900 to-slate-950"
+  class="scroll-mt-24 relative py-36 bg-slate-950 overflow-hidden"
 >
-  <div class="max-w-6xl mx-auto px-6 text-center">
+  <!-- Background Glow -->
+  <div class="absolute bottom-0 left-1/2 -translate-x-1/2 w-full max-w-2xl h-64 bg-indigo-600/10 blur-[100px] rounded-full pointer-events-none"></div>
+
+  <div class="relative max-w-6xl mx-auto px-6 text-center">
 
     <!-- TITLE -->
-    <h2 class="text-4xl font-bold mb-4">
+    <h2 class="reveal text-4xl md:text-5xl font-extrabold mb-6 text-white">
       Let’s Build Something Together
     </h2>
 
-    <p class="text-slate-400 mb-16">
+    <p class="reveal stagger-1 text-slate-400 mb-16 max-w-2xl mx-auto text-lg">
       Open for collaboration, freelance work, tech projects, and content creation.
     </p>
 
@@ -549,7 +485,7 @@
       <!-- EMAIL -->
       <a
         href="mailto:dederayival19@gmail.com"
-        class="group p-6 rounded-2xl bg-slate-900 border border-slate-800 hover:border-indigo-500 transition"
+        class="reveal glass-card p-6 rounded-2xl border border-slate-800/50 hover:border-indigo-500/50 transition-all duration-500 group flex flex-col items-center justify-center text-center hover:-translate-y-2 hover:shadow-[0_10px_30px_-15px_rgba(99,102,241,0.3)]"
       >
         <div class="flex flex-col items-center gap-3">
 
@@ -570,7 +506,7 @@
       <a
         href="https://github.com/Rayival"
         target="_blank"
-        class="group p-6 rounded-2xl bg-slate-900 border border-slate-800 hover:border-indigo-500 transition"
+        class="reveal glass-card p-6 rounded-2xl border border-slate-800/50 hover:border-indigo-500/50 transition-all duration-500 group flex flex-col items-center justify-center text-center hover:-translate-y-2 hover:shadow-[0_10px_30px_-15px_rgba(99,102,241,0.3)]"
       >
         <div class="flex flex-col items-center gap-3">
 
@@ -591,7 +527,7 @@
       <a
         href="https://www.linkedin.com/in/rayival-dede-saputra-3a06892b3/"
         target="_blank"
-        class="group p-6 rounded-2xl bg-slate-900 border border-slate-800 hover:border-indigo-500 transition"
+        class="reveal glass-card p-6 rounded-2xl border border-slate-800/50 hover:border-indigo-500/50 transition-all duration-500 group flex flex-col items-center justify-center text-center hover:-translate-y-2 hover:shadow-[0_10px_30px_-15px_rgba(99,102,241,0.3)]"
       >
         <div class="flex flex-col items-center gap-3">
 
@@ -612,7 +548,7 @@
       <a
         href="https://instagram.com/rayivaldedesaputra_"
         target="_blank"
-        class="group p-6 rounded-2xl bg-slate-900 border border-slate-800 hover:border-indigo-500 transition"
+        class="reveal glass-card p-6 rounded-2xl border border-slate-800/50 hover:border-indigo-500/50 transition-all duration-500 group flex flex-col items-center justify-center text-center hover:-translate-y-2 hover:shadow-[0_10px_30px_-15px_rgba(99,102,241,0.3)]"
       >
         <div class="flex flex-col items-center gap-3">
 
@@ -633,7 +569,7 @@
       <a
         href="https://tiktok.com/@ryvlzz"
         target="_blank"
-        class="group p-6 rounded-2xl bg-slate-900 border border-slate-800 hover:border-indigo-500 transition"
+        class="reveal glass-card p-6 rounded-2xl border border-slate-800/50 hover:border-indigo-500/50 transition-all duration-500 group flex flex-col items-center justify-center text-center hover:-translate-y-2 hover:shadow-[0_10px_30px_-15px_rgba(99,102,241,0.3)]"
       >
         <div class="flex flex-col items-center gap-3">
 
@@ -654,7 +590,7 @@
       <a
         href="https://www.youtube.com/@rayivaldedesaputra"
         target="_blank"
-        class="group p-6 rounded-2xl bg-slate-900 border border-slate-800 hover:border-red-500 transition"
+        class="reveal glass-card p-6 rounded-2xl border border-slate-800/50 hover:border-red-500/50 transition-all duration-500 group flex flex-col items-center justify-center text-center hover:-translate-y-2 hover:shadow-[0_10px_30px_-15px_rgba(239,68,68,0.3)]"
       >
         <div class="flex flex-col items-center gap-3">
 
@@ -674,7 +610,7 @@
     </div>
 
   </div>
-</section>
+  </section>
 
   </div>
 </template>
@@ -700,6 +636,8 @@ import unperLogo from '~/assets/schools/unper.png'
 import dicodingCert from '~/assets/certificates/dicoding-ai.png'
 import bnspCert from '~/assets/certificates/bnsp-webdev.png'
 import geminiCert from '~/assets/certificates/gemini.jpg'
+import webinarGFECert from '~/assets/certificates/webinarGFE.jpg'
+import avaValdes from '~/assets/ava-valdes.png'
 
 const projectsCount = ref(0)
 const yearsLearning = ref(0)
@@ -818,29 +756,22 @@ onMounted(() => {
 
   requestAnimationFrame(raf)
 
-  const observer = new IntersectionObserver(
-  (entries) => {
-    entries.forEach((entry) => {
-      if (entry.isIntersecting) {
-        entry.target.classList.add('show')
-      }
-    })
-  },
-  { threshold: 0.15 }
-)
-
-document.querySelectorAll('.fade-up').forEach((el) => {
-  observer.observe(el)
-})
-
-  requestAnimationFrame(raf)
-
-  const fadeObserver = new IntersectionObserver(
-    entries => entries.forEach(e => e.isIntersecting && e.target.classList.add('show')),
-    { threshold: 0.2 }
+  const revealObserver = new IntersectionObserver(
+    (entries) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('active')
+          // Optional: stop observing after animation
+          // revealObserver.unobserve(entry.target)
+        }
+      })
+    },
+    { threshold: 0.1, rootMargin: '0px 0px -50px 0px' }
   )
 
-  document.querySelectorAll('.fade-up').forEach(el => fadeObserver.observe(el))
+  document.querySelectorAll('.reveal').forEach((el) => {
+    revealObserver.observe(el)
+  })
 
   const statsObserver = new IntersectionObserver(
     entries => {
@@ -863,7 +794,7 @@ const education = [
   { level: 'SD', school: 'SDN Pahlawan Tasikmalaya', year: '2013–2019', logo: sdnLogo },
   { level: 'SMP', school: 'SMPN 11 Tasikmalaya', year: '2019–2022', logo: smpnLogo },
   { level: 'SMK', school: 'SMKN 4 Tasikmalaya – PPLG', year: '2022–2025', logo: smkn4Logo },
-  { level: 'University', school: 'Universitas Perjuangan Tasikmalaya', year: '2025–Now', logo: unperLogo },
+  { level: 'University', school: 'Universitas Perjuangan Tasikmalaya', year: '2025–Now', logo: unperLogo, major: 'Informatics Engineering' },
 ]
 
 const certifications = [
@@ -896,6 +827,16 @@ const certifications = [
       'National professional certification validating competence in Programming and Software Development.',
     image: bnspCert,
     link: 'https://drive.google.com/file/d/1CdI4l_mwP1xUq4DijvA5pKhK-q44rEEO/view',
+  },
+  {
+    title: 'Google for Education Webinar',
+    issuer: 'Google for Education',
+    year: '2026',
+    type: 'Webinar Certification',
+    description:
+      'Participant in the official Google for Education webinar focusing on digital transformation and educational tools.',
+    image: webinarGFECert,
+    link: '#',
   },
 ]
 
@@ -957,16 +898,22 @@ function closeCert() {
 </script>
 
 <style>
-.fade-up {
+.reveal {
   opacity: 0;
   transform: translateY(40px);
-  transition: all 0.9s ease;
+  transition: opacity 1s cubic-bezier(0.16, 1, 0.3, 1), transform 1s cubic-bezier(0.16, 1, 0.3, 1);
+  will-change: transform, opacity;
 }
 
-.fade-up.show {
+.reveal.active {
   opacity: 1;
   transform: translateY(0);
 }
+
+.stagger-1 { transition-delay: 100ms; }
+.stagger-2 { transition-delay: 200ms; }
+.stagger-3 { transition-delay: 300ms; }
+.stagger-4 { transition-delay: 400ms; }
 
 .orbit-container{
   position:relative;
@@ -1072,4 +1019,57 @@ function closeCert() {
   0%,100%{ box-shadow:0 0 30px rgba(99,102,241,.4); }
   50%{ box-shadow:0 0 70px rgba(99,102,241,.9); }
 }
+
+/* Custom Premium Styles */
+.glass-card {
+  background: rgba(255, 255, 255, 0.03);
+  backdrop-filter: blur(12px);
+  border: 1px solid rgba(255, 255, 255, 0.05);
+  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.glass-card:hover {
+  background: rgba(255, 255, 255, 0.06);
+  border-color: rgba(99, 102, 241, 0.3);
+  transform: translateY(-5px);
+}
+
+.text-gradient {
+  background: linear-gradient(135deg, #818cf8 0%, #22d3ee 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+::selection {
+  background: rgba(99, 102, 241, 0.3);
+  color: #fff;
+}
+
+/* Scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: #020617;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #1e293b;
+  border-radius: 10px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #334155;
+}
+
+@keyframes float {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-10px); }
+}
+
+.animate-float {
+  animation: float 4s ease-in-out infinite;
+}
+
 </style>
