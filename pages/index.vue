@@ -638,6 +638,8 @@ import bnspCert from '~/assets/certificates/bnsp-webdev.png'
 import geminiCert from '~/assets/certificates/gemini.jpg'
 import webinarGFECert from '~/assets/certificates/webinarGFE.jpg'
 import avaValdes from '~/assets/ava-valdes.png'
+import Mindtrack from '~/assets/mindtrack.png'
+
 
 const projectsCount = ref(0)
 const yearsLearning = ref(0)
@@ -849,6 +851,14 @@ const projects = [
     link: 'https://ti-b.vercel.app/',
     stack: ['Vue', 'Tailwind', 'Vercel'],
   },
+  {
+  title: 'MindTrack AI',
+  description: 'An emotionally intelligent AI platform designed to help students and young adults overcome burnout, overthinking, emotional exhaustion, and productivity paralysis. Built for the #JuaraVibeCoding Indonesia competition using Gemini AI, Google Cloud Run, and a cinematic AI startup interface.',
+  image: Mindtrack,
+  link: 'https://mindtrackai.vercel.app/',
+  stack: ['React','TailwindCSS','Gemini AI', 'Google Cloud Run' ],
+  },
+
    {
     title: 'VΛLDEX',
     description: 'A modern digital photo booth system designed for real-time capture, smart composition, and instant export',
