@@ -100,9 +100,9 @@
                 <span>VIEW PROJECTS</span>
                 <span class="text-xs">↓</span>
               </a>
-              <a href="#contact"
+              <a href="#content"
                  class="px-6 py-3 bg-zinc-900 hover:bg-zinc-800 text-zinc-200 border border-zinc-800 font-mono text-xs uppercase tracking-wider rounded font-semibold transition-all flex items-center gap-2">
-                <span>CONTACT ME</span>
+                <span>CREATIVE CONTENT</span>
                 <span class="text-xs">↗</span>
               </a>
             </div>
@@ -118,11 +118,14 @@
             </div>
           </div>
 
-          <!-- RIGHT: AVATAR CARD (assets/ava-valdes.png) -->
+          <!-- RIGHT: AVATAR CARD (DUAL IMAGE HOVER/TAP SWITCH) -->
           <div class="lg:col-span-5 valdes-reveal valdes-delay-2 flex justify-center lg:justify-end">
             <div class="relative w-full max-w-sm">
               <!-- Precision Architectural Frame -->
-              <div class="relative p-2.5 bg-zinc-950 border border-zinc-800 rounded-lg shadow-2xl overflow-hidden group">
+              <div 
+                class="relative p-2.5 bg-zinc-950 border border-zinc-800 rounded-lg shadow-2xl overflow-hidden group cursor-pointer select-none"
+                @click="isAvaToggled = !isAvaToggled"
+              >
                 <!-- Header Bar -->
                 <div class="flex items-center justify-between px-3 py-2 border-b border-zinc-800/80 mb-2.5 bg-zinc-900/60 rounded-t font-mono text-[11px]">
                   <div class="flex items-center gap-2">
@@ -132,18 +135,38 @@
                   <span class="text-zinc-300 font-semibold">VALDES_AVATAR</span>
                 </div>
 
-                <!-- Avatar Artwork -->
+                <!-- Avatar Artwork with Toggle & Hover Transition -->
                 <div class="relative aspect-[3/4] w-full overflow-hidden rounded bg-zinc-900">
-                  <img :src="avaValdes" alt="Rayival Dede Saputra (Valdes)" class="w-full h-full object-cover object-center filter grayscale contrast-125 group-hover:grayscale-0 transition-all duration-700 ease-out" />
+                  <!-- Default Photo (ival1.jpg) -->
+                  <img 
+                    :src="fotoProfil" 
+                    alt="Rayival Dede Saputra" 
+                    class="absolute inset-0 w-full h-full object-cover object-center filter grayscale contrast-125 transition-all duration-700 ease-out"
+                    :class="{
+                      'opacity-0 scale-105': isAvaToggled,
+                      'lg:group-hover:opacity-0 lg:group-hover:scale-105': !isAvaToggled
+                    }" 
+                  />
+                  <!-- Secondary Photo (ava-valdes.png) -->
+                  <img 
+                    :src="avaValdes" 
+                    alt="Valdes Avatar" 
+                    class="absolute inset-0 w-full h-full object-cover object-center transition-all duration-700 ease-out opacity-0 scale-95"
+                    :class="{
+                      'opacity-100 scale-100': isAvaToggled,
+                      'lg:group-hover:opacity-100 lg:group-hover:scale-100': !isAvaToggled
+                    }" 
+                  />
+
                   <div class="absolute inset-0 bg-gradient-to-t from-zinc-950/90 via-transparent to-transparent pointer-events-none"></div>
                   
                   <!-- Bottom Overlay Telemetry -->
                   <div class="absolute bottom-3 left-3 right-3 flex items-center justify-between pointer-events-none font-mono text-[10px]">
                     <div class="px-2 py-1 bg-zinc-950/90 border border-zinc-800 rounded text-zinc-200">
-                      [ ID: VALDES // INFORMATIC ]
+                      [ {{ isAvaToggled ? 'AVATAR_MODE' : 'REAL_PROFILE' }} ]
                     </div>
                     <div class="px-2 py-1 bg-emerald-950/80 border border-emerald-800/60 rounded text-emerald-400 font-semibold uppercase">
-                      LIVE
+                      TAP TO TOGGLE
                     </div>
                   </div>
                 </div>
@@ -177,35 +200,35 @@
       </div>
     </div>
 
-    <!-- ═══════════════════════════════════════════
-         SECTION // 01 // ABOUT ME & CAPABILITIES
+<!-- ═══════════════════════════════════════════
+         SECTION // 01 // ABOUT ME & CAPABILITIES (RESPONSIVE FOR HP)
     ═══════════════════════════════════════════ -->
-    <section id="about" class="scroll-mt-20 py-20 border-b border-zinc-800/80">
-      <div class="max-w-7xl mx-auto px-6">
+<section id="about" class="scroll-mt-20 py-12 sm:py-20 border-b border-zinc-800/80">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6">
         
         <!-- Section Index Header -->
-        <div class="flex flex-col sm:flex-row sm:items-end justify-between gap-4 pb-4 border-b border-zinc-800 mb-12">
+        <div class="valdes-reveal flex flex-col sm:flex-row sm:items-end justify-between gap-2 sm:gap-4 pb-4 border-b border-zinc-800 mb-8 sm:mb-12">
           <div>
             <span class="font-mono text-xs text-zinc-400 uppercase tracking-widest">// 01 // ABOUT ME</span>
-            <h2 class="font-display text-3xl sm:text-4xl font-semibold text-zinc-100 tracking-tight mt-1">
+            <h2 class="font-display text-2xl sm:text-4xl font-semibold text-zinc-100 tracking-tight mt-1">
               Disciplined systems & clean logic.
             </h2>
           </div>
           <span class="font-mono text-xs text-zinc-400 uppercase">INDEX_ARCH // 01</span>
         </div>
 
-        <div class="grid lg:grid-cols-12 gap-10 items-start">
+        <div class="grid lg:grid-cols-12 gap-8 lg:gap-10 items-start">
           
           <!-- Left Column: Bio & Roles -->
           <div class="lg:col-span-7 flex flex-col gap-6">
-            <div class="p-6 bg-zinc-900/60 border border-zinc-800 rounded-lg">
-              <h3 class="font-display text-xl text-zinc-100 font-medium mb-3">Undergraduate Systems Thinker</h3>
-              <p class="text-sm text-zinc-400 leading-relaxed mb-4">
+            <div class="valdes-reveal p-4 sm:p-6 bg-zinc-900/60 border border-zinc-800 rounded-lg">
+              <h3 class="font-display text-base sm:text-xl text-zinc-100 font-medium mb-2.5 sm:mb-3">Undergraduate Systems Thinker</h3>
+              <p class="text-xs sm:text-sm text-zinc-400 leading-relaxed mb-4">
                 An Informatics Engineering student at Universitas Perjuangan Tasikmalaya, having grounded technical foundations at SMKN 4 Tasikmalaya (PPLG). I view software engineering as spatial problem-solving — delivering clean user interfaces, reliable server components, and immersive virtual environments.
               </p>
-              <div class="flex flex-wrap gap-2 pt-2">
+              <div class="flex flex-wrap gap-1.5 sm:gap-2 pt-1">
                 <span v-for="tech in techStack" :key="tech"
-                      class="px-2.5 py-1 bg-zinc-950 border border-zinc-800 rounded font-mono text-[11px] text-zinc-400">
+                      class="px-2 py-0.5 sm:px-2.5 sm:py-1 bg-zinc-950 border border-zinc-800 rounded font-mono text-[10px] sm:text-[11px] text-zinc-400">
                   {{ tech }}
                 </span>
               </div>
@@ -214,43 +237,42 @@
             <!-- Role Cards -->
             <div class="grid grid-cols-1 gap-3">
               <div v-for="role in roles" :key="role.name"
-                   class="p-4 bg-zinc-900/40 border border-zinc-800/80 rounded-lg hover:border-zinc-700 transition-all flex items-start gap-4">
-                <div class="w-10 h-10 rounded bg-zinc-950 border border-zinc-800 flex items-center justify-center text-lg shrink-0">
+                   class="valdes-reveal p-3.5 sm:p-4 bg-zinc-900/40 border border-zinc-800/80 rounded-lg hover:border-zinc-700 transition-all flex items-start gap-3 sm:gap-4">
+                <div class="w-9 h-9 sm:w-10 sm:h-10 rounded bg-zinc-950 border border-zinc-800 flex items-center justify-center text-base sm:text-lg shrink-0">
                   {{ role.icon }}
                 </div>
                 <div>
-                  <h4 class="font-display text-base font-semibold text-zinc-100">{{ role.name }}</h4>
-                  <p class="font-mono text-xs text-zinc-400 mt-0.5">{{ role.desc }}</p>
+                  <h4 class="font-display text-xs sm:text-base font-semibold text-zinc-100">{{ role.name }}</h4>
+                  <p class="font-mono text-[10px] sm:text-xs text-zinc-400 mt-0.5">{{ role.desc }}</p>
                 </div>
               </div>
             </div>
           </div>
 
-          <!-- Right Column: Education Journey Timeline WITH SCHOOL LOGOS -->
-          <div class="lg:col-span-5">
-            <div class="p-6 bg-zinc-900/60 border border-zinc-800 rounded-lg">
-              <div class="flex items-center justify-between pb-4 border-b border-zinc-800 mb-6">
-                <span class="font-mono text-xs text-zinc-400 uppercase tracking-wider">// EDUCATION JOURNEY</span>
-                <span class="font-mono text-xs text-zinc-400">2013 — PRESENT</span>
+          <!-- Right Column: Education Journey Timeline -->
+          <div class="lg:col-span-5 w-full">
+            <div class="valdes-reveal p-4 sm:p-6 bg-zinc-900/60 border border-zinc-800 rounded-lg">
+              <div class="flex items-center justify-between pb-3 sm:pb-4 border-b border-zinc-800 mb-4 sm:mb-6">
+                <span class="font-mono text-[11px] sm:text-xs text-zinc-400 uppercase tracking-wider">// EDUCATION JOURNEY</span>
+                <span class="font-mono text-[10px] sm:text-xs text-zinc-400">2013 — PRESENT</span>
               </div>
 
-              <div class="flex flex-col gap-4">
+              <div class="flex flex-col gap-2.5 sm:gap-4">
                 <div v-for="edu in education" :key="edu.school" 
-                     class="p-3 bg-zinc-950 border border-zinc-800/80 rounded-lg flex items-center gap-4 hover:border-zinc-700 transition-colors">
+                     class="p-2.5 sm:p-3 bg-zinc-950 border border-zinc-800/80 rounded-lg flex items-center gap-3 sm:gap-4 hover:border-zinc-700 transition-colors">
                   
-                  <!-- School Logo Wrapper -->
-                  <div class="w-10 h-10 rounded bg-zinc-900 border border-zinc-800 p-1.5 flex items-center justify-center shrink-0">
+                  <div class="w-8 h-8 sm:w-10 sm:h-10 rounded bg-zinc-900 border border-zinc-800 p-1 flex items-center justify-center shrink-0">
                     <img :src="edu.logo" :alt="edu.school" class="w-full h-full object-contain" />
                   </div>
 
                   <div class="flex-1 min-w-0">
-                    <div class="flex items-center justify-between gap-2">
-                      <h4 class="font-display text-sm text-zinc-100 font-medium truncate">{{ edu.school }}</h4>
-                      <span class="font-mono text-[10px] text-zinc-400 shrink-0">{{ edu.year }}</span>
+                    <div class="flex items-center justify-between gap-1 sm:gap-2">
+                      <h4 class="font-display text-xs sm:text-sm text-zinc-100 font-medium truncate">{{ edu.school }}</h4>
+                      <span class="font-mono text-[9px] sm:text-[10px] text-zinc-400 shrink-0">{{ edu.year }}</span>
                     </div>
-                    <div class="flex items-center gap-2 mt-0.5">
-                      <span v-if="edu.major" class="font-mono text-[10px] text-zinc-400 truncate">{{ edu.major }}</span>
-                      <span class="font-mono text-[9px] px-1.5 py-0.2 rounded bg-zinc-900 text-zinc-400 border border-zinc-800 uppercase ml-auto shrink-0">
+                    <div class="flex items-center gap-1.5 mt-0.5">
+                      <span v-if="edu.major" class="font-mono text-[9px] sm:text-[10px] text-zinc-400 truncate">{{ edu.major }}</span>
+                      <span class="font-mono text-[8px] sm:text-[9px] px-1.5 py-0.2 rounded bg-zinc-900 text-zinc-400 border border-zinc-800 uppercase ml-auto shrink-0">
                         {{ edu.level }}
                       </span>
                     </div>
@@ -272,7 +294,7 @@
       <div class="max-w-7xl mx-auto px-6">
         
         <!-- Section Index Header -->
-        <div class="flex flex-col sm:flex-row sm:items-end justify-between gap-4 pb-4 border-b border-zinc-800 mb-10">
+        <div class="valdes-reveal flex flex-col sm:flex-row sm:items-end justify-between gap-4 pb-4 border-b border-zinc-800 mb-10">
           <div>
             <span class="font-mono text-xs text-zinc-400 uppercase tracking-widest">// 02 // PROJECTS</span>
             <h2 class="font-display text-3xl sm:text-4xl font-semibold text-zinc-100 tracking-tight mt-1">
@@ -285,7 +307,7 @@
         <!-- Featured Projects Grid (Top 2) -->
         <div class="grid md:grid-cols-2 gap-6 mb-6">
           <div v-for="(project, idx) in projects.slice(0, 2)" :key="project.title"
-               class="p-6 bg-zinc-900/60 border border-zinc-800 rounded-lg hover:border-zinc-700 transition-all flex flex-col justify-between group"
+               class="valdes-reveal p-6 bg-zinc-900/60 border border-zinc-800 rounded-lg hover:border-zinc-700 transition-all flex flex-col justify-between group"
                :ref="el => projectCardRefs[idx] = el"
                @mousemove="onCardMouseMove($event, idx)"
                @mouseleave="onCardMouseLeave(idx)">
@@ -318,7 +340,7 @@
         <!-- Remaining Projects Grid -->
         <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
           <div v-for="(project, idx) in projects.slice(2)" :key="project.title"
-               class="p-5 bg-zinc-900/40 border border-zinc-800 rounded-lg hover:border-zinc-700 transition-all flex flex-col justify-between group">
+               class="valdes-reveal p-5 bg-zinc-900/40 border border-zinc-800 rounded-lg hover:border-zinc-700 transition-all flex flex-col justify-between group">
             <div>
               <div class="flex items-center justify-between font-mono text-[11px] text-zinc-400 border-b border-zinc-800 pb-2.5 mb-3">
                 <span>PRJ_0{{ idx + 3 }}</span>
@@ -347,28 +369,130 @@
       </div>
     </section>
 
+  <!-- ═══════════════════════════════════════════
+         SECTION // 03 // CREATIVE CONTENT
+    ═══════════════════════════════════════════ -->
+    <section id="content" class="scroll-mt-20 py-20 border-b border-zinc-800/80">
+      <div class="max-w-7xl mx-auto px-6">
+        
+        <!-- Section Index Header -->
+        <div class="valdes-reveal flex flex-col sm:flex-row sm:items-end justify-between gap-4 pb-4 border-b border-zinc-800 mb-10">
+          <div>
+            <span class="font-mono text-xs text-zinc-400 uppercase tracking-widest">// 03 // CREATIVE CONTENT</span>
+            <h2 class="font-display text-3xl sm:text-4xl font-semibold text-zinc-100 tracking-tight mt-1">
+              Creative Ideas, Stories & Digital Media
+            </h2>
+          </div>
+          <span class="font-mono text-xs text-zinc-400 uppercase">INDEX_ARCH // 03</span>
+        </div>
+
+        <!-- Social Media Streams / Embed Grid -->
+        <div class="grid md:grid-cols-3 gap-6">
+          <div 
+            v-for="item in creativeContents" 
+            :key="item.title"
+            class="valdes-reveal valdes-delay-1 p-5 bg-zinc-900/50 border border-zinc-800 rounded-lg hover:border-zinc-700 transition-all flex flex-col justify-between group"
+          >
+            <div>
+              <div class="flex items-center justify-between font-mono text-[11px] text-zinc-400 pb-3 border-b border-zinc-800 mb-4">
+                <div class="flex items-center gap-2">
+                  <Icon :icon="item.icon" class="text-base text-zinc-300" />
+                  <span>{{ item.platform }}</span>
+                </div>
+                <span class="text-emerald-400 font-semibold">{{ item.tag }}</span>
+              </div>
+
+              <!-- Interactive TikTok Preview Card dengan Background Image Overlay -->
+              <a 
+                :href="item.link" 
+                target="_blank" 
+                rel="noopener"
+                class="relative aspect-[9/16] max-h-[380px] w-full rounded bg-zinc-950 border border-zinc-800 overflow-hidden mb-4 group-hover:border-zinc-700 transition-all flex flex-col justify-between p-5 group/card text-left cursor-pointer"
+              >
+                <!-- Background Image Overlay -->
+                <img 
+                  v-if="item.image"
+                  :src="item.image" 
+                  :alt="item.title"
+                  class="absolute inset-0 w-full h-full object-cover object-center group-hover/card:scale-105 transition-transform duration-500"
+                />
+
+                <!-- Background Glow & Gradient Dark Overlay (agar teks tetap terbaca) -->
+                <div class="absolute inset-0 bg-gradient-to-t from-zinc-950 via-zinc-950/60 to-zinc-950/30 z-10"></div>
+
+                <!-- Top Badge -->
+                <div class="relative z-20 flex items-center justify-between">
+                  <span class="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-full bg-zinc-950/80 border border-zinc-800 text-[10px] font-mono text-zinc-300 backdrop-blur">
+                    <Icon icon="ic:baseline-tiktok" class="text-xs text-emerald-400" />
+                    <span>TIKTOK REELS</span>
+                  </span>
+                  <span class="font-mono text-[10px] text-zinc-400 px-2 py-0.5 rounded bg-zinc-950/80 border border-zinc-800/80 backdrop-blur">HD 1080P</span>
+                </div>
+
+                <!-- Center Play Button -->
+                <div class="relative z-20 my-auto flex flex-col items-center gap-2">
+                  <div class="w-14 h-14 rounded-full bg-white/90 text-zinc-950 flex items-center justify-center shadow-2xl backdrop-blur group-hover/card:scale-110 group-hover/card:bg-white transition-all duration-300">
+                    <Icon icon="mdi:play" class="text-3xl ml-1 text-zinc-950" />
+                  </div>
+                  <span class="font-mono text-[11px] text-zinc-300 group-hover/card:text-white transition-colors bg-zinc-950/60 px-2.5 py-0.5 rounded backdrop-blur">WATCH ON TIKTOK</span>
+                </div>
+
+                <!-- Bottom Info -->
+                <div class="relative z-20 pt-2 border-t border-zinc-800/80 flex items-center justify-between">
+                  <span class="font-mono text-[11px] text-emerald-400 font-semibold">{{ item.handle }}</span>
+                  <span class="font-mono text-[10px] text-zinc-300 flex items-center gap-1">
+                    PLAY VIDEO <span>↗</span>
+                  </span>
+                </div>
+              </a>
+
+              <h3 class="font-display text-lg font-semibold text-zinc-100 mb-1 group-hover:text-white transition-colors">
+                {{ item.title }}
+              </h3>
+              <p class="text-xs text-zinc-400 leading-relaxed mb-4">
+                {{ item.description }}
+              </p>
+            </div>
+
+            <div class="pt-3 border-t border-zinc-800 flex items-center justify-between">
+              <span class="font-mono text-[10px] text-zinc-500">{{ item.handle }}</span>
+              <a 
+                :href="item.link" 
+                target="_blank" 
+                rel="noopener"
+                class="font-mono text-xs text-zinc-300 hover:text-white inline-flex items-center gap-1 uppercase tracking-wider"
+              >
+                <span>Watch</span>
+                <span>↗</span>
+              </a>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </section>
     <!-- ═══════════════════════════════════════════
-         SECTION // 03 // CERTIFICATIONS
+         SECTION // 04 // CERTIFICATIONS
     ═══════════════════════════════════════════ -->
     <section id="certifications" class="scroll-mt-20 py-20 border-b border-zinc-800/80">
       <div class="max-w-7xl mx-auto px-6">
         
         <!-- Section Index Header -->
-        <div class="flex flex-col sm:flex-row sm:items-end justify-between gap-4 pb-4 border-b border-zinc-800 mb-10">
+        <div class="valdes-reveal flex flex-col sm:flex-row sm:items-end justify-between gap-4 pb-4 border-b border-zinc-800 mb-10">
           <div>
-            <span class="font-mono text-xs text-zinc-400 uppercase tracking-widest">// 03 // CERTIFICATIONS</span>
+            <span class="font-mono text-xs text-zinc-400 uppercase tracking-widest">// 04 // CERTIFICATIONS</span>
             <h2 class="font-display text-3xl sm:text-4xl font-semibold text-zinc-100 tracking-tight mt-1">
               Verified Credentials & Accreditations
             </h2>
           </div>
-          <span class="font-mono text-xs text-zinc-400 uppercase">INDEX_ARCH // 03</span>
+          <span class="font-mono text-xs text-zinc-400 uppercase">INDEX_ARCH // 04</span>
         </div>
 
         <!-- Certifications List Grid -->
         <div class="grid md:grid-cols-2 gap-4 mb-10">
           <div v-for="cert in certifications" :key="cert.title"
                @click="openCert(cert)"
-               class="p-5 bg-zinc-900/60 border border-zinc-800 rounded-lg hover:border-zinc-700 transition-all cursor-pointer flex items-start gap-4 group">
+               class="valdes-reveal p-5 bg-zinc-900/60 border border-zinc-800 rounded-lg hover:border-zinc-700 transition-all cursor-pointer flex items-start gap-4 group">
             <div class="w-10 h-10 rounded bg-zinc-950 border border-zinc-800 flex items-center justify-center text-lg shrink-0">
               {{ cert.icon }}
             </div>
@@ -388,7 +512,7 @@
         <!-- Benchmarks Sub-Grid -->
         <div class="grid sm:grid-cols-3 gap-4">
           <div v-for="item in certMeanings" :key="item.title"
-               class="p-4 bg-zinc-900/30 border border-zinc-800/80 rounded-lg">
+               class="valdes-reveal p-4 bg-zinc-900/30 border border-zinc-800/80 rounded-lg">
             <div class="font-mono text-xs text-zinc-300 font-semibold mb-1.5 flex items-center gap-2">
               <span>{{ item.icon }}</span>
               <span>{{ item.title }}</span>
@@ -401,27 +525,27 @@
     </section>
 
     <!-- ═══════════════════════════════════════════
-         SECTION // 04 // CONTACT & NETWORK
+         SECTION // 05 // CONTACT & NETWORK
     ═══════════════════════════════════════════ -->
     <section id="contact" class="scroll-mt-20 py-20">
       <div class="max-w-7xl mx-auto px-6">
         
         <!-- Section Index Header -->
-        <div class="flex flex-col sm:flex-row sm:items-end justify-between gap-4 pb-4 border-b border-zinc-800 mb-10">
+        <div class="valdes-reveal flex flex-col sm:flex-row sm:items-end justify-between gap-4 pb-4 border-b border-zinc-800 mb-10">
           <div>
-            <span class="font-mono text-xs text-zinc-400 uppercase tracking-widest">// 04 // COMMS & NETWORK</span>
+            <span class="font-mono text-xs text-zinc-400 uppercase tracking-widest">// 05 // COMMS & NETWORK</span>
             <h2 class="font-display text-3xl sm:text-4xl font-semibold text-zinc-100 tracking-tight mt-1">
               Let's Build Something Together
             </h2>
           </div>
-          <span class="font-mono text-xs text-zinc-400 uppercase">INDEX_ARCH // 04</span>
+          <span class="font-mono text-xs text-zinc-400 uppercase">INDEX_ARCH // 05</span>
         </div>
 
         <!-- Social Grid -->
         <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 mb-8">
           <a v-for="social in socials" :key="social.label"
              :href="social.href" target="_blank" rel="noopener"
-             class="p-4 bg-zinc-900/60 border border-zinc-800 rounded-lg hover:border-zinc-700 hover:bg-zinc-900 transition-all flex items-center justify-between group">
+             class="valdes-reveal p-4 bg-zinc-900/60 border border-zinc-800 rounded-lg hover:border-zinc-700 hover:bg-zinc-900 transition-all flex items-center justify-between group">
             <div class="flex items-center gap-3">
               <div class="w-9 h-9 rounded bg-zinc-950 border border-zinc-800 flex items-center justify-center text-lg">
                 <Icon :icon="social.icon" class="text-zinc-300" />
@@ -436,7 +560,7 @@
         </div>
 
         <!-- Architectural Telemetry Bar -->
-        <div class="p-4 bg-zinc-900/40 border border-zinc-800 rounded-lg flex flex-col sm:flex-row items-center justify-between gap-4">
+        <div class="valdes-reveal p-4 bg-zinc-900/40 border border-zinc-800 rounded-lg flex flex-col sm:flex-row items-center justify-between gap-4">
           <div class="flex items-center gap-3">
             <span class="w-2 h-2 rounded-full bg-emerald-500 animate-pulse"></span>
             <span class="font-mono text-xs text-zinc-300">SYS_COMM: ACTIVE</span>
@@ -453,7 +577,7 @@
 </template>
 
 <script setup>
-import { ref, onMounted, onUnmounted } from 'vue'
+import { ref, onMounted, onUnmounted, nextTick } from 'vue'
 import Lenis from '@studio-freight/lenis'
 import { ArrowTopRightOnSquareIcon } from '@heroicons/vue/24/outline'
 import { Icon } from '@iconify/vue'
@@ -476,6 +600,13 @@ import dicodingCert  from '~/assets/certificates/dicoding-ai.png'
 import bnspCert      from '~/assets/certificates/bnsp-webdev.png'
 import geminiCert    from '~/assets/certificates/gemini.jpg'
 import webinarGFECert from '~/assets/certificates/webinarGFE.jpg'
+// ── Assets Overlay Content ──────────────────────────────────────────
+import overlay1 from '~/assets/content/overlay1.jpg'
+import overlay2 from '~/assets/content/overlay2.jpg'
+import overlay3 from '~/assets/content/overlay3.jpg'
+
+// ── State Toggle Avatar Image ─────────────────────────────────────────
+const isAvaToggled = ref(false)
 
 // ── SEO / Head ────────────────────────────────────────────────────────
 useHead({
@@ -556,12 +687,6 @@ const heroSkills = [
   { name: 'Git',          icon: 'logos:git-icon'      },
   { name: 'Figma',        icon: 'logos:figma'         },
   { name: 'Roblox',       icon: 'simple-icons:roblox' },
-]
-
-// ── Marquee ───────────────────────────────────────────────────────────
-const marqueeItems = [
-  'Vue.js', 'Nuxt', 'Laravel', 'Tailwind CSS', 'JavaScript',
-  'Figma', 'Roblox Studio', 'Git', 'AI Tools', 'React',
 ]
 
 // ── Tech Stack ────────────────────────────────────────────────────────
@@ -651,6 +776,40 @@ const projects = [
   },
 ]
 
+// ── Creative Content Section Data ──────────────────────────────────────
+const creativeContents = [
+  {
+    platform: 'TikTok',
+    icon: 'ic:baseline-tiktok',
+    tag: '@ryvlzz',
+    title: 'Algoritma & Struktur Data',
+    description: 'Edukasi konsep penting pemrograman: Stack, Queue, LIFO, FIFO, Binary Tree, hingga kompleksitas logika dasar.',
+    handle: '@ryvlzz',
+    link: 'https://www.tiktok.com/@ryvlzz/video/7666803352516168978',
+    image: overlay1
+  },
+  {
+    platform: 'TikTok',
+    icon: 'ic:baseline-tiktok',
+    tag: '@ryvlzz',
+    title: 'Google Student Ambassador Showcase',
+    description: 'Prototype & eksperimen interaktif menggunakan Gemini Canvas saat proses pendaftaran program Google Student Ambassador.',
+    handle: '@ryvlzz',
+    link: 'https://www.tiktok.com/@ryvlzz/video/7680379403720871175',
+    image: overlay2
+  },
+  {
+    platform: 'TikTok',
+    icon: 'ic:baseline-tiktok',
+    tag: '@ryvlzz',
+    title: 'Perspective: Mindset Belajar Coding',
+    description: 'Pengalaman lulusan PPLG SMK ke Informatika UNPER. Menjawab kebingungan mahasiswa: Coding bukan soal hafalan, tapi melatih problem solving & logika.',
+    handle: '@ryvlzz',
+    link: 'https://www.tiktok.com/@ryvlzz/video/7633400034188365063',
+    image: overlay3
+  }
+]
+
 // ── Certifications ────────────────────────────────────────────────────
 const certifications = [
   {
@@ -725,7 +884,7 @@ let lenis = null
 let mx = 0, my = 0, rx = 0, ry = 0
 let rafId = null
 
-onMounted(() => {
+onMounted(async () => {
   // Smooth scroll
   lenis = new Lenis({ duration: 1.1, smoothWheel: true, smoothTouch: false })
   function raf(t) { lenis.raf(t); rafId = requestAnimationFrame(raf) }
@@ -748,21 +907,26 @@ onMounted(() => {
     })
   }
 
-  // Scroll reveal
-  const ro = new IntersectionObserver(entries => {
-    entries.forEach(e => { if (e.isIntersecting) e.target.classList.add('valdes-visible') })
-  }, { threshold: 0.08, rootMargin: '0px 0px -40px 0px' })
-  document.querySelectorAll('.valdes-reveal').forEach(el => ro.observe(el))
+  // Tunggu DOM selesai nge-render v-for list sepenuhnya sebelum Observer menyala
+  await nextTick()
 
-  // Stats counter
-  let statsAnimated = false
-  const so = new IntersectionObserver(entries => {
-    if (entries[0].isIntersecting && !statsAnimated) {
-      statsAnimated = true
-      heroStats.value.forEach(s => animateCounter(s))
-    }
-  }, { threshold: 0.5 })
-  if (statsRef.value) so.observe(statsRef.value)
+  setTimeout(() => {
+    // Scroll reveal
+    const ro = new IntersectionObserver(entries => {
+      entries.forEach(e => { if (e.isIntersecting) e.target.classList.add('valdes-visible') })
+    }, { threshold: 0.08, rootMargin: '0px 0px -40px 0px' })
+    document.querySelectorAll('.valdes-reveal').forEach(el => ro.observe(el))
+
+    // Stats counter
+    let statsAnimated = false
+    const so = new IntersectionObserver(entries => {
+      if (entries[0].isIntersecting && !statsAnimated) {
+        statsAnimated = true
+        heroStats.value.forEach(s => animateCounter(s))
+      }
+    }, { threshold: 0.5 })
+    if (statsRef.value) so.observe(statsRef.value)
+  }, 100)
 })
 
 onUnmounted(() => {

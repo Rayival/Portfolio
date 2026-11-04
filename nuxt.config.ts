@@ -41,7 +41,7 @@ export default defineNuxtConfig({
   },
 
   /* =========================
-   * APP HEAD (SEO + FONT)
+   * APP HEAD (SEO + FONT + SCRIPTS)
    * ========================= */
   app: {
     head: {
@@ -59,6 +59,12 @@ export default defineNuxtConfig({
         {
           rel: 'stylesheet',
           href: 'https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap',
+        },
+      ],
+      script: [
+        {
+          src: 'https://www.tiktok.com/embed.js',
+          async: true,
         },
       ],
     },
