@@ -1,12 +1,14 @@
 // nuxt.config.ts
 export default defineNuxtConfig({
   /* =========================
-   * GLOBAL CSS
+   * MODULES
    * ========================= */
-  // css: [
-  //   '@/assets/css/animate.css',
-  //   '@/assets/css/main.css',
-  // ],
+  modules: [
+    '@nuxtjs/color-mode',
+    '@nuxtjs/tailwindcss',
+    '@nuxt/image',
+    '@nuxtjs/google-fonts',
+  ],
 
   /* =========================
    * PLUGINS (CLIENT ONLY)
@@ -16,12 +18,25 @@ export default defineNuxtConfig({
   ],
 
   /* =========================
-   * MODULES
+   * GOOGLE FONTS (LOCAL & NON-BLOCKING)
    * ========================= */
-  modules: [
-    '@nuxtjs/color-mode',
-    '@nuxtjs/tailwindcss',
-  ],
+  googleFonts: {
+    families: {
+      Geist: [500, 600, 700],
+      Inter: [400, 500, 600, 700],
+      'JetBrains+Mono': [400, 500],
+    },
+    display: 'swap',
+    download: true, // Download font ke lokal server/Vercel agar loading super cepat
+  },
+
+  /* =========================
+   * IMAGE OPTIMIZATION (@nuxt/image)
+   * ========================= */
+  image: {
+    format: ['webp', 'avif'],
+    quality: 80,
+  },
 
   /* =========================
    * BUILD
@@ -41,10 +56,13 @@ export default defineNuxtConfig({
   },
 
   /* =========================
-   * APP HEAD (SEO + FONT + SCRIPTS)
+   * APP HEAD (SEO + ACCESSIBILITY)
    * ========================= */
   app: {
     head: {
+      htmlAttrs: {
+        lang: 'id', // Menghilangkan warning accessibility "Elemen <html> tidak memiliki atribut [lang]"
+      },
       title: 'Rayival Dede Saputra | Tech Enthusiast & Web Developer',
       meta: [
         {
@@ -54,12 +72,6 @@ export default defineNuxtConfig({
         },
         { name: 'viewport', content: 'width=device-width, initial-scale=1' },
         { name: 'theme-color', content: '#6366F1' },
-      ],
-      link: [
-        {
-          rel: 'stylesheet',
-          href: 'https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap',
-        },
       ],
       script: [
         {
@@ -71,12 +83,15 @@ export default defineNuxtConfig({
   },
 
   /* =========================
-   * DEVTOOLS
+   * ROUTE RULES (CACHE CONTROL)
    * ========================= */
-  devtools: { enabled: true },
+  routeRules: {
+    '/_nuxt/**': { headers: { 'cache-control': 'public, max-age=31536000, immutable' } },
+  },
 
   /* =========================
-   * COMPATIBILITY
+   * DEVTOOLS & COMPATIBILITY
    * ========================= */
+  devtools: { enabled: true },
   compatibilityDate: '2025-08-02',
 })

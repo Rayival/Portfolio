@@ -12,7 +12,9 @@
   "dependencies": {
     "@heroicons/vue": "^2.2.0",
     "@iconify/vue": "^5.0.0",
+    "@nuxt/image": "^2.2.1",
     "@nuxtjs/color-mode": "^3.5.2",
+    "@nuxtjs/google-fonts": "^3.2.0",
     "@popperjs/core": "^2.11.8",
     "@studio-freight/lenis": "^1.0.42",
     "@vueuse/core": "^13.6.0",

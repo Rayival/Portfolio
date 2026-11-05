@@ -1,3 +1,4 @@
+<!-- Footer.vue -->
 <template>
   <footer class="bg-zinc-950 border-t border-zinc-800/80 relative text-zinc-400">
 
@@ -74,6 +75,12 @@
               <li>
                 <a href="#projects" class="text-zinc-400 hover:text-zinc-100 transition-colors flex items-center gap-1.5">
                   <span class="text-zinc-600">&gt;</span> Projects
+                </a>
+              </li>
+              <li>
+                <!-- Ditambahkan link ke Content -->
+                <a href="#content" class="text-zinc-400 hover:text-zinc-100 transition-colors flex items-center gap-1.5">
+                  <span class="text-zinc-600">&gt;</span> Content
                 </a>
               </li>
               <li>
@@ -176,8 +183,6 @@ onUnmounted(() => {
 </script>
 
 <style scoped>
-@import url('https://fonts.googleapis.com/css2?family=Geist:wght@600&family=JetBrains+Mono:wght@400;500;600&display=swap');
-
 .font-display { font-family: 'Geist', sans-serif; }
 .font-mono    { font-family: 'JetBrains Mono', monospace; }
 

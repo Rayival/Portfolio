@@ -128,6 +128,8 @@
     "../node_modules/nuxt/node_modules",
     "../node_modules/@nuxtjs/color-mode/node_modules",
     "../node_modules/@nuxtjs/tailwindcss/node_modules",
+    "../node_modules/@nuxt/image/node_modules",
+    "../node_modules/@nuxtjs/google-fonts/node_modules",
     "../node_modules/@nuxt/devtools/node_modules",
     "../node_modules/@nuxt/telemetry/node_modules",
     "../dist"

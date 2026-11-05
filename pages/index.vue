@@ -28,7 +28,13 @@
           </div>
           <!-- Modal Body -->
           <div class="p-6 bg-zinc-900">
-            <img :src="activeCert.image" alt="Certificate Preview" class="w-full rounded border border-zinc-800 mb-6 object-contain max-h-72 bg-zinc-950" />
+            <NuxtImg 
+              :src="activeCert.image" 
+              alt="Certificate Preview" 
+              format="webp" 
+              quality="80" 
+              class="w-full rounded border border-zinc-800 mb-6 object-contain max-h-72 bg-zinc-950" 
+            />
             <div class="flex justify-between items-center">
               <p class="font-mono text-xs text-zinc-400 tracking-wider">{{ activeCert.issuer }} · {{ activeCert.year }}</p>
               <a
@@ -58,7 +64,7 @@
     <!-- ═══════════════════════════════════════════
          HERO SECTION
     ═══════════════════════════════════════════ -->
-    <section id="home" class="relative min-h-screen flex items-center pt-24 sm:pt-28 pb-16 border-b border-zinc-800/80">
+    <section id="home" class="relative min-h-[100dvh] flex items-center pt-24 sm:pt-28 pb-16 border-b border-zinc-800/80">
       <div class="max-w-7xl mx-auto px-6 w-full">
         <div class="grid lg:grid-cols-12 gap-12 lg:gap-8 items-center">
 
@@ -74,8 +80,7 @@
             </div>
 
             <!-- Name / Title -->
-            <h1 class="valdes-reveal valdes-delay-1 font-display font-semibold text-zinc-100 tracking-tight leading-none mb-3"
-                style="font-size: clamp(40px, 6.5vw, 80px);">
+            <h1 class="valdes-reveal valdes-delay-1 font-display font-semibold text-zinc-100 tracking-tight leading-none mb-3 text-[36px] xs:text-4xl sm:text-5xl md:text-6xl lg:text-7xl">
               Rayival Dede Saputra
             </h1>
 
@@ -137,20 +142,24 @@
 
                 <!-- Avatar Artwork with Toggle & Hover Transition -->
                 <div class="relative aspect-[3/4] w-full overflow-hidden rounded bg-zinc-900">
-                  <!-- Default Photo (ival1.jpg) -->
-                  <img 
+                  <!-- Default Photo -->
+                  <NuxtImg 
                     :src="fotoProfil" 
                     alt="Rayival Dede Saputra" 
+                    format="webp"
+                    quality="80"
                     class="absolute inset-0 w-full h-full object-cover object-center filter grayscale contrast-125 transition-all duration-700 ease-out"
                     :class="{
                       'opacity-0 scale-105': isAvaToggled,
                       'lg:group-hover:opacity-0 lg:group-hover:scale-105': !isAvaToggled
                     }" 
                   />
-                  <!-- Secondary Photo (ava-valdes.png) -->
-                  <img 
+                  <!-- Secondary Photo -->
+                  <NuxtImg 
                     :src="avaValdes" 
                     alt="Valdes Avatar" 
+                    format="webp"
+                    quality="80"
                     class="absolute inset-0 w-full h-full object-cover object-center transition-all duration-700 ease-out opacity-0 scale-95"
                     :class="{
                       'opacity-100 scale-100': isAvaToggled,
@@ -171,8 +180,8 @@
                   </div>
                 </div>
 
-                <!-- Footer Metadata -->
-                <div class="mt-2.5 pt-2 border-t border-zinc-800/60 flex items-center justify-between text-zinc-500 font-mono text-[10px]">
+                <!-- Footer Metadata (Perbaikan Kontras Aksesibilitas) -->
+                <div class="mt-2.5 pt-2 border-t border-zinc-800/60 flex items-center justify-between text-zinc-400 font-mono text-[10px]">
                   <span>RES: 1792x2390 // AR 0.75</span>
                   <span>ORIGIN: TASIKMALAYA, ID</span>
                 </div>
@@ -200,10 +209,10 @@
       </div>
     </div>
 
-<!-- ═══════════════════════════════════════════
-         SECTION // 01 // ABOUT ME & CAPABILITIES (RESPONSIVE FOR HP)
+    <!-- ═══════════════════════════════════════════
+         SECTION // 01 // ABOUT ME & CAPABILITIES
     ═══════════════════════════════════════════ -->
-<section id="about" class="scroll-mt-20 py-12 sm:py-20 border-b border-zinc-800/80">
+    <section id="about" class="scroll-mt-20 py-12 sm:py-20 border-b border-zinc-800/80">
       <div class="max-w-7xl mx-auto px-4 sm:px-6">
         
         <!-- Section Index Header -->
@@ -249,7 +258,7 @@
             </div>
           </div>
 
-          <!-- Right Column: Education Journey Timeline -->
+          <!-- Right Column: Education Journey Timeline WITH SCHOOL LOGOS -->
           <div class="lg:col-span-5 w-full">
             <div class="valdes-reveal p-4 sm:p-6 bg-zinc-900/60 border border-zinc-800 rounded-lg">
               <div class="flex items-center justify-between pb-3 sm:pb-4 border-b border-zinc-800 mb-4 sm:mb-6">
@@ -261,8 +270,17 @@
                 <div v-for="edu in education" :key="edu.school" 
                      class="p-2.5 sm:p-3 bg-zinc-950 border border-zinc-800/80 rounded-lg flex items-center gap-3 sm:gap-4 hover:border-zinc-700 transition-colors">
                   
+                  <!-- School Logo Wrapper (NuxtImg Lazy Loading) -->
                   <div class="w-8 h-8 sm:w-10 sm:h-10 rounded bg-zinc-900 border border-zinc-800 p-1 flex items-center justify-center shrink-0">
-                    <img :src="edu.logo" :alt="edu.school" class="w-full h-full object-contain" />
+                    <NuxtImg 
+                      :src="edu.logo" 
+                      :alt="edu.school" 
+                      width="40" 
+                      height="40" 
+                      format="webp" 
+                      loading="lazy" 
+                      class="w-full h-full object-contain" 
+                    />
                   </div>
 
                   <div class="flex-1 min-w-0">
@@ -369,7 +387,7 @@
       </div>
     </section>
 
-  <!-- ═══════════════════════════════════════════
+    <!-- ═══════════════════════════════════════════
          SECTION // 03 // CREATIVE CONTENT
     ═══════════════════════════════════════════ -->
     <section id="content" class="scroll-mt-20 py-20 border-b border-zinc-800/80">
@@ -402,7 +420,7 @@
                 <span class="text-emerald-400 font-semibold">{{ item.tag }}</span>
               </div>
 
-              <!-- Interactive TikTok Preview Card dengan Background Image Overlay -->
+              <!-- Interactive TikTok Preview Card dengan NuxtImg Overlay -->
               <a 
                 :href="item.link" 
                 target="_blank" 
@@ -410,14 +428,17 @@
                 class="relative aspect-[9/16] max-h-[380px] w-full rounded bg-zinc-950 border border-zinc-800 overflow-hidden mb-4 group-hover:border-zinc-700 transition-all flex flex-col justify-between p-5 group/card text-left cursor-pointer"
               >
                 <!-- Background Image Overlay -->
-                <img 
+                <NuxtImg 
                   v-if="item.image"
                   :src="item.image" 
                   :alt="item.title"
+                  format="webp"
+                  quality="80"
+                  loading="lazy"
                   class="absolute inset-0 w-full h-full object-cover object-center group-hover/card:scale-105 transition-transform duration-500"
                 />
 
-                <!-- Background Glow & Gradient Dark Overlay (agar teks tetap terbaca) -->
+                <!-- Background Glow & Gradient Dark Overlay -->
                 <div class="absolute inset-0 bg-gradient-to-t from-zinc-950 via-zinc-950/60 to-zinc-950/30 z-10"></div>
 
                 <!-- Top Badge -->
@@ -471,6 +492,7 @@
 
       </div>
     </section>
+
     <!-- ═══════════════════════════════════════════
          SECTION // 04 // CERTIFICATIONS
     ═══════════════════════════════════════════ -->
@@ -582,28 +604,27 @@ import Lenis from '@studio-freight/lenis'
 import { ArrowTopRightOnSquareIcon } from '@heroicons/vue/24/outline'
 import { Icon } from '@iconify/vue'
 
-// ── Assets ───────────────────────────────────────────────────────────
-import fotoProfil    from '~/assets/ival1.jpg'
-import avaValdes     from '~/assets/ava-valdes.png'
-import tibImage      from '~/assets/tib.png'
-import Mindtrack     from '~/assets/mindtrack.png'
-import valdexImage   from '~/assets/valdex.png'
-import robloxImage   from '~/assets/roblox.png'
-import perpusImage   from '~/assets/Perpus.png'
-import profilImage   from '~/assets/profil.png'
-import agroImage     from '~/assets/agro.png'
-import sdnLogo       from '~/assets/schools/sdn.png'
-import smpnLogo      from '~/assets/schools/smpn.png'
-import smkn4Logo     from '~/assets/schools/smkn4.png'
-import unperLogo     from '~/assets/schools/unper.png'
-import dicodingCert  from '~/assets/certificates/dicoding-ai.png'
-import bnspCert      from '~/assets/certificates/bnsp-webdev.png'
-import geminiCert    from '~/assets/certificates/gemini.jpg'
-import webinarGFECert from '~/assets/certificates/webinarGFE.jpg'
-// ── Assets Overlay Content ──────────────────────────────────────────
-import overlay1 from '~/assets/content/overlay1.jpg'
-import overlay2 from '~/assets/content/overlay2.jpg'
-import overlay3 from '~/assets/content/overlay3.jpg'
+// ── Assets Path String (Mengambil dari folder public/) ────────────────
+const fotoProfil     = '/ival1.jpg'
+const avaValdes      = '/ava-valdes.png'
+const tibImage       = '/tib.png'
+const Mindtrack      = '/mindtrack.png'
+const valdexImage    = '/valdex.png'
+const robloxImage    = '/roblox.png'
+const perpusImage    = '/Perpus.png'
+const profilImage    = '/profil.png'
+const agroImage      = '/agro.png'
+const sdnLogo        = '/schools/sdn.png'
+const smpnLogo       = '/schools/smpn.png'
+const smkn4Logo      = '/schools/smkn4.png'
+const unperLogo      = '/schools/unper.png'
+const dicodingCert   = '/certificates/dicoding-ai.png'
+const bnspCert       = '/certificates/bnsp-webdev.png'
+const geminiCert     = '/certificates/gemini.jpg'
+const webinarGFECert = '/certificates/webinarGFE.jpg'
+const overlay1       = '/content/overlay1.jpg'
+const overlay2       = '/content/overlay2.jpg'
+const overlay3       = '/content/overlay3.jpg'
 
 // ── State Toggle Avatar Image ─────────────────────────────────────────
 const isAvaToggled = ref(false)
@@ -907,7 +928,6 @@ onMounted(async () => {
     })
   }
 
-  // Tunggu DOM selesai nge-render v-for list sepenuhnya sebelum Observer menyala
   await nextTick()
 
   setTimeout(() => {
@@ -936,8 +956,7 @@ onUnmounted(() => {
 </script>
 
 <style scoped>
-@import url('https://fonts.googleapis.com/css2?family=Geist:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;600&family=Inter:wght@400;500;600&display=swap');
-
+/* Font family didefinisikan dari nuxt.config / Tailwind */
 .font-display { font-family: 'Geist', sans-serif; }
 .font-sans    { font-family: 'Inter', sans-serif; }
 .font-mono    { font-family: 'JetBrains Mono', monospace; }
